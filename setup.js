@@ -13,7 +13,7 @@ try {
     execSync('git reset --hard origin/main', { stdio: 'inherit' });
 
     console.log("\n[2/2] Menginstal dependencies...");
-    execSync('npm install', { stdio: 'inherit' });
+    execSync('npm install --ignore-scripts', { stdio: 'inherit' });
 
     console.log("\n=========================================");
     console.log("✨ SETUP SELESAI! ✨");
