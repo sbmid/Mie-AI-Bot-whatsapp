@@ -1,0 +1,446 @@
+{
+  "1": {
+    "id": 1,
+    "savedAt": "2026-06-14T12:22:11.024Z",
+    "waktu": "14/06/2026 19:22:10",
+    "sender": "94300352282641",
+    "pushName": "#nightcore + #smooth",
+    "chatId": "120363416120576615@g.us",
+    "isGroup": true,
+    "messageType": "extendedTextMessage",
+    "summary": ".crm",
+    "hasReply": true,
+    "mentionedJids": [],
+    "rawMessage": {
+      "key": {
+        "remoteJid": "120363416120576615@g.us",
+        "fromMe": false,
+        "id": "A5267B63C93B6A0B036E748522051D83",
+        "participant": "94300352282641@lid",
+        "participantAlt": "6283809720392@s.whatsapp.net"
+      },
+      "messageTimestamp": 1781439730,
+      "pushName": "#nightcore + #smooth",
+      "broadcast": false,
+      "newsletter": false,
+      "platform": "android",
+      "message": {
+        "extendedTextMessage": {
+          "text": ".crm",
+          "previewType": "NONE",
+          "contextInfo": {
+            "stanzaId": "INOV5093D1875A8E2712",
+            "participant": "158737914454188@lid",
+            "quotedMessage": {
+              "conversation": "[i] Invoice *Beli* (Rp 50.000) berhasil dikirim ke +6283809720392\nMode: interactive\nRef: INV-1781436135785"
+            },
+            "quotedType": "EXPLICIT"
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "rrg0DegXyVBzksHTA3OkwIwAaK2W5wnEFf3lId/i0d4="
+        }
+      },
+      "mtype": "extendedTextMessage",
+      "body": ".crm",
+      "sender": "94300352282641@lid",
+      "isGroup": true,
+      "chat": "120363416120576615@g.us"
+    }
+  },
+  "2": {
+    "id": 2,
+    "savedAt": "2026-06-14T12:22:49.591Z",
+    "waktu": "14/06/2026 19:22:49",
+    "sender": "94300352282641",
+    "pushName": "#nightcore + #smooth",
+    "chatId": "?",
+    "isGroup": false,
+    "messageType": "unknown",
+    "summary": "[unknown]",
+    "hasReply": false,
+    "mentionedJids": [],
+    "rawMessage": {
+      "id": "A5B32074570F3AA2686F4AFC6E8B5718",
+      "savedAt": "2026-06-14T12:22:45.779Z",
+      "waktu": "14/06/2026 19:22:45",
+      "sender": "94300352282641",
+      "pushName": "#nightcore + #smooth",
+      "chatId": "94300352282641@lid",
+      "isGroup": false,
+      "messageType": "extendedTextMessage",
+      "preview": ".",
+      "rareFeatures": [],
+      "hasRareFeature": false,
+      "raw": {
+        "key": {
+          "remoteJid": "94300352282641@lid",
+          "remoteJidAlt": "6283809720392@s.whatsapp.net",
+          "fromMe": false,
+          "id": "A5B32074570F3AA2686F4AFC6E8B5718"
+        },
+        "messageTimestamp": 1781439765,
+        "pushName": "#nightcore + #smooth",
+        "broadcast": false,
+        "newsletter": false,
+        "platform": "android",
+        "message": {
+          "extendedTextMessage": {
+            "text": ".",
+            "previewType": "NONE",
+            "contextInfo": {
+              "expiration": 0,
+              "ephemeralSettingTimestamp": "1744170113",
+              "disappearingMode": {
+                "initiator": "CHANGED_IN_CHAT",
+                "trigger": "BIZ_SUPPORTS_FB_HOSTING",
+                "initiatedByMe": true
+              }
+            },
+            "inviteLinkGroupTypeV2": "DEFAULT"
+          },
+          "messageContextInfo": {
+            "deviceListMetadata": {
+              "senderKeyHash": "cHgGxPr+A8ZzTQ==",
+              "senderTimestamp": "1781438304",
+              "senderAccountType": "HOSTED",
+              "recipientKeyHash": "fKPIwNF2G6EoCg==",
+              "recipientTimestamp": "1781398065"
+            },
+            "deviceListMetadataVersion": 2,
+            "messageSecret": "hkCYQ1gW6QBbIlilGZj2M3lkLw3JiBkBw7XasGGTcpw="
+          }
+        },
+        "mtype": "extendedTextMessage",
+        "body": ".",
+        "sender": "94300352282641@lid",
+        "isGroup": false,
+        "chat": "94300352282641@lid"
+      }
+    }
+  },
+  "3": {
+    "id": 3,
+    "savedAt": "2026-06-15T11:45:48.597Z",
+    "waktu": "15/06/2026 18:42:49",
+    "sender": "120363132193413454",
+    "pushName": "-",
+    "chatId": "120363132193413454@g.us",
+    "isGroup": true,
+    "messageType": "extendedTextMessage",
+    "summary": "❤️ *Darah Sekarat! (-826 HP)*\nMinimal 50 HP buat lawan monster.\n\nBeli potion dulu ketik:\n*.shop potion 1*\nLalu pakai:\n*.",
+    "hasReply": true,
+    "mentionedJids": [],
+    "rawMessage": {
+      "key": {
+        "remoteJid": "120363132193413454@g.us",
+        "fromMe": true,
+        "id": "INOV8AF45BB03F1FFBF1"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❤️ *Darah Sekarat! (-826 HP)*\nMinimal 50 HP buat lawan monster.\n\nBeli potion dulu ketik:\n*.shop potion 1*\nLalu pakai:\n*.use potion 1*",
+          "contextInfo": {
+            "stanzaId": "A51EE7532200B899CCEBE8AD044B4931",
+            "participant": "94300352282641@lid",
+            "quotedMessage": {
+              "extendedTextMessage": {
+                "text": ".hunt",
+                "previewType": "NONE",
+                "inviteLinkGroupTypeV2": "DEFAULT"
+              }
+            },
+            "expiration": "86400",
+            "quotedType": "EXPLICIT"
+          }
+        },
+        "messageContextInfo": {
+          "messageSecret": "CrW5VL0sJDKv1MNL8d1qwPCpPTcvlP+4jvTY6wWOa+o=",
+          "threadId": [
+            {
+              "threadType": "VIEW_REPLIES",
+              "threadKey": {
+                "remoteJid": "120363132193413454@g.us",
+                "fromMe": false,
+                "id": "INOV73EC8171D9DB4827",
+                "participant": "94300352282641@lid"
+              }
+            }
+          ]
+        }
+      },
+      "messageTimestamp": "1781523769",
+      "status": "PENDING",
+      "participant": "6289526965035:68@s.whatsapp.net"
+    }
+  },
+  "4": {
+    "id": 4,
+    "savedAt": "2026-06-15T12:23:49.186Z",
+    "waktu": "15/06/2026 19:23:49",
+    "sender": "94300352282641",
+    "pushName": "#nightcore + #smooth",
+    "chatId": "?",
+    "isGroup": false,
+    "messageType": "unknown",
+    "summary": "[unknown]",
+    "hasReply": false,
+    "mentionedJids": [],
+    "rawMessage": {
+      "id": "A57FE56DB51BFDC03A8FFEBEF45F8556",
+      "savedAt": "2026-06-15T12:23:24.205Z",
+      "waktu": "15/06/2026 19:23:23",
+      "sender": "94300352282641",
+      "pushName": "#nightcore + #smooth",
+      "chatId": "120363132193413454@g.us",
+      "isGroup": true,
+      "messageType": "extendedTextMessage",
+      "preview": "kalok mau Nung \nagak lama aku get Nomo nya soalnya",
+      "rareFeatures": [
+        "HAS_REPLY"
+      ],
+      "hasRareFeature": true,
+      "raw": {
+        "key": {
+          "remoteJid": "120363132193413454@g.us",
+          "fromMe": false,
+          "id": "A57FE56DB51BFDC03A8FFEBEF45F8556",
+          "participant": "94300352282641@lid",
+          "participantAlt": "6283809720392@s.whatsapp.net"
+        },
+        "messageTimestamp": 1781526203,
+        "pushName": "#nightcore + #smooth",
+        "broadcast": false,
+        "newsletter": false,
+        "platform": "android",
+        "message": {
+          "extendedTextMessage": {
+            "text": "kalok mau Nung \nagak lama aku get Nomo nya soalnya",
+            "previewType": "NONE",
+            "contextInfo": {
+              "stanzaId": "ACC4C21658684DA465B430665081613A",
+              "participant": "44607647826023@lid",
+              "quotedMessage": {
+                "conversation": "Gc ada ga"
+              },
+              "expiration": 86400,
+              "disappearingMode": {
+                "initiator": "CHANGED_IN_CHAT",
+                "trigger": "UNKNOWN"
+              },
+              "quotedType": "EXPLICIT"
+            },
+            "inviteLinkGroupTypeV2": "DEFAULT"
+          },
+          "messageContextInfo": {
+            "messageSecret": "GLFQ80FkUEAeXoadMWdYeL73RYqF2xEUu/4RBmrCB6A="
+          }
+        },
+        "mtype": "extendedTextMessage",
+        "body": "kalok mau Nung \nagak lama aku get Nomo nya soalnya",
+        "sender": "94300352282641@lid",
+        "isGroup": true,
+        "chat": "120363132193413454@g.us"
+      }
+    }
+  },
+  "5": {
+    "id": 5,
+    "savedAt": "2026-06-15T16:43:34.220Z",
+    "waktu": "15/06/2026 23:43:34",
+    "sender": "94300352282641",
+    "pushName": "#nightcore + #smooth",
+    "chatId": "?",
+    "isGroup": false,
+    "messageType": "unknown",
+    "summary": "[unknown]",
+    "hasReply": false,
+    "mentionedJids": [],
+    "rawMessage": {
+      "id": "A5EA510D1E11CADAB6100FFA10C98EB5",
+      "savedAt": "2026-06-15T16:43:16.743Z",
+      "waktu": "15/06/2026 23:43:16",
+      "sender": "94300352282641",
+      "pushName": "#nightcore + #smooth",
+      "chatId": "120363132193413454@g.us",
+      "isGroup": true,
+      "messageType": "imageMessage",
+      "preview": ".gs",
+      "rareFeatures": [],
+      "hasRareFeature": false,
+      "raw": {
+        "key": {
+          "remoteJid": "120363132193413454@g.us",
+          "fromMe": false,
+          "id": "A5EA510D1E11CADAB6100FFA10C98EB5",
+          "participant": "94300352282641@lid",
+          "participantAlt": "6283809720392@s.whatsapp.net"
+        },
+        "messageTimestamp": 1781541796,
+        "pushName": "#nightcore + #smooth",
+        "broadcast": false,
+        "newsletter": false,
+        "platform": "android",
+        "message": {
+          "imageMessage": {
+            "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m237/AQOa6WSnwSQjXjgo8DJio5d2DVs_VTU1Bl1pH9Hl3ZE4G4UeNT9jaBx_BHD0yTLGPOv5A7hBqwCa5p4TOhAPJJAkl6yTRMy9aIAblgp8Lg?ccb=9-4&oh=01_Q5Aa4wFO6HlTcwkIyuCsq39lBK0PPqy8ctwjRUu9n76p3EOVAg&oe=6A57A860&_nc_sid=e6ed6c&mms3=true",
+            "mimetype": "image/jpeg",
+            "caption": ".gs",
+            "fileSha256": "pTpoA+i5N7mXePZrIcAZ+T5QMr5pD0uDA5bgRrfEPvI=",
+            "fileLength": "156957",
+            "height": 1599,
+            "width": 899,
+            "mediaKey": "iBzQZNuxvZalQtj/B0l2oizwVODNpEH1HiKWbb9jPs0=",
+            "fileEncSha256": "Uo9gOr5gRWmHhAV7JHny8FAD9kxDjcCmD+/gZkUJkAc=",
+            "directPath": "/o1/v/t24/f2/m237/AQOa6WSnwSQjXjgo8DJio5d2DVs_VTU1Bl1pH9Hl3ZE4G4UeNT9jaBx_BHD0yTLGPOv5A7hBqwCa5p4TOhAPJJAkl6yTRMy9aIAblgp8Lg?ccb=9-4&oh=01_Q5Aa4wFO6HlTcwkIyuCsq39lBK0PPqy8ctwjRUu9n76p3EOVAg&oe=6A57A860&_nc_sid=e6ed6c",
+            "mediaKeyTimestamp": "1781541794",
+            "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIADwAIQMBIgACEQEDEQH/xAAuAAADAQEBAAAAAAAAAAAAAAAAAgQDAQUBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAPLz6umlcFmrgbkziO8setUwgpVK8bmdE5QIG2Xc+fQnonRTh0x//8QAJRAAAgIBBAAGAwAAAAAAAAAAAQIAAxESEyExEBRBUVNhIjJS/9oACAEBAAE/AKgCjmBuIHKtkGFamrH5sTNs+8oIBIdioxDgEgdZnZlO2EYlyG9BN5vkERB5ghugcx23GfCgTlTMKvLI2DNVX8mWDFx+4tQWwgkYllasANPMfWyhWBPtNl/qM41hguYHrPLBoxrdhiyHeDnSwbHrNy32EUiGwIBNypuwIRWOmxNCfIZYhBLjjM7hRY+M+DszYJMDnmMxGPuP+x8P/8QAHhEAAgEDBQAAAAAAAAAAAAAAAAEQAhIhESJSYZH/2gAIAQIBAT8AUb+K9Ea9Rcy4uKsvBTH/xAAcEQABAwUAAAAAAAAAAAAAAAAAARAhAhEgMVH/2gAIAQMBAT8AaOqXySNlTf/Z",
+            "contextInfo": {
+              "expiration": 86400,
+              "disappearingMode": {
+                "initiator": "CHANGED_IN_CHAT",
+                "trigger": "UNKNOWN"
+              },
+              "pairedMediaType": "NOT_PAIRED_MEDIA",
+              "statusSourceType": "IMAGE",
+              "mediaDomainInfo": {
+                "mediaKeyDomain": "MEDIA_KEY_DOMAIN_E2EE",
+                "e2EeMediaKey": "iBzQZNuxvZalQtj/B0l2oizwVODNpEH1HiKWbb9jPs0="
+              }
+            },
+            "scansSidecar": "ZL0lr7QCfQUwzjL1QJYI2fmt3zmHBmKYuCd3Hy1/ac86d/pg1xGvZQ==",
+            "scanLengths": [
+              15559,
+              62143,
+              28574,
+              50681
+            ],
+            "midQualityFileSha256": "BlOBzgjiB+Lz1CqukqJnvXQYlDpUrSy8wpize1ABqw0="
+          },
+          "messageContextInfo": {
+            "messageSecret": "pP+9jhyEdHEf8x7EWW52nMJyfzD1joEQqDQ1YFx6HEw="
+          }
+        },
+        "mtype": "imageMessage",
+        "body": ".gs",
+        "sender": "94300352282641@lid",
+        "isGroup": true,
+        "chat": "120363132193413454@g.us"
+      }
+    }
+  },
+  "6": {
+    "id": 6,
+    "savedAt": "2026-06-16T00:24:09.061Z",
+    "waktu": "16/06/2026 07:23:40",
+    "sender": "120363132193413454",
+    "pushName": "-",
+    "chatId": "120363132193413454@g.us",
+    "isGroup": true,
+    "messageType": "contactsArrayMessage",
+    "summary": "[contactsArrayMessage]",
+    "hasReply": false,
+    "mentionedJids": [],
+    "rawMessage": {
+      "key": {
+        "remoteJid": "120363132193413454@g.us",
+        "fromMe": true,
+        "id": "INOV964EAD56745F0CDD"
+      },
+      "message": {
+        "contactsArrayMessage": {
+          "displayName": "Tim Developer",
+          "contacts": [
+            {
+              "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Mie AI Dev 1\nORG:Mie AI Corp;\nTEL;type=CELL;type=VOICE;waid=6283809720392:+62 838-0972-0392\nEND:VCARD"
+            },
+            {
+              "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:Mie AI Support\nORG:Mie AI Corp;\nTEL;type=CELL;type=VOICE;waid=628123456789:+62 812-3456-7890\nEND:VCARD"
+            }
+          ],
+          "contextInfo": {
+            "expiration": "86400"
+          }
+        },
+        "messageContextInfo": {
+          "messageSecret": "CLvxE1FljnHUFeppj6OTsw4lapqO+n2jKgi3Wbd94xk="
+        }
+      },
+      "messageTimestamp": "1781569420",
+      "status": "PENDING",
+      "participant": "6289526965035:68@s.whatsapp.net"
+    }
+  },
+  "7": {
+    "id": 7,
+    "savedAt": "2026-06-16T16:59:09.586Z",
+    "waktu": "16/06/2026 23:59:09",
+    "sender": "6283146182721",
+    "pushName": "ryan",
+    "chatId": "?",
+    "isGroup": false,
+    "messageType": "unknown",
+    "summary": "[unknown]",
+    "hasReply": false,
+    "mentionedJids": [],
+    "rawMessage": {
+      "id": "AC3796435A7081A4C7DB33F453DCF544",
+      "savedAt": "2026-06-16T16:59:02.192Z",
+      "waktu": "16/06/2026 23:59:01",
+      "sender": "6283146182721",
+      "pushName": "ryan",
+      "chatId": "120363132193413454@g.us",
+      "isGroup": true,
+      "messageType": "stickerMessage",
+      "preview": "[Stiker]",
+      "rareFeatures": [],
+      "hasRareFeature": false,
+      "raw": {
+        "key": {
+          "remoteJid": "120363132193413454@g.us",
+          "fromMe": false,
+          "id": "AC3796435A7081A4C7DB33F453DCF544",
+          "participant": "6283146182721@s.whatsapp.net"
+        },
+        "messageTimestamp": 1781629141,
+        "pushName": "ryan",
+        "broadcast": false,
+        "message": {
+          "stickerMessage": {
+            "url": "https://mmg.whatsapp.net/v/t62.15575-24/660057983_1520392652859988_7967567666148253205_n.enc?ccb=11-4&oh=01_Q5Aa4wE-K38YL36JtcOI3lhl2EZkoz9EU_ngAsLDt862vv1sFg&oe=6A58EA51&_nc_sid=5e03e0&mms3=true",
+            "fileSha256": "vCYf6fVoNFmEnAg4RtjnQbSs700xiDJpXcDsjUUgZKk=",
+            "fileEncSha256": "fsIcuuviQ37EAIL5LtV1IE7yEYyvq1g58As/peXHvDI=",
+            "mediaKey": "0xKeK2wTzx/pU9ifd22QFrhM8IRC1jjOJt3rsQ6vNSk=",
+            "mimetype": "image/webp",
+            "height": 512,
+            "width": 512,
+            "directPath": "/v/t62.15575-24/660057983_1520392652859988_7967567666148253205_n.enc?ccb=11-4&oh=01_Q5Aa4wE-K38YL36JtcOI3lhl2EZkoz9EU_ngAsLDt862vv1sFg&oe=6A58EA51&_nc_sid=5e03e0",
+            "fileLength": "33206",
+            "mediaKeyTimestamp": "1781535615",
+            "isAnimated": false,
+            "contextInfo": {
+              "expiration": 86400,
+              "disappearingMode": {
+                "initiator": "CHANGED_IN_CHAT",
+                "trigger": "UNKNOWN"
+              }
+            },
+            "stickerSentTs": "1781629140950",
+            "isAvatar": false,
+            "isAiSticker": false,
+            "isLottie": false
+          },
+          "messageContextInfo": {
+            "messageSecret": "PXKz10OS8iSvQz0SS4RoBz3FlhkvjsnURS2zxwxFrvI="
+          }
+        },
+        "mtype": "stickerMessage",
+        "body": "",
+        "sender": "6283146182721@s.whatsapp.net",
+        "isGroup": true,
+        "chat": "120363132193413454@g.us"
+      }
+    }
+  }
+}

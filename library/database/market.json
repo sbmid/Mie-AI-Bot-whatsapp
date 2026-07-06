@@ -1,0 +1,437 @@
+{
+  "saham": {
+    "ALIP": {
+      "name": "PT Alip Tbk",
+      "price": 500000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "teknologi",
+      "basePrice": 500000
+    },
+    "NAGA": {
+      "name": "Naga Corp",
+      "price": 1200000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "energi",
+      "basePrice": 1200000
+    },
+    "GOBLIN": {
+      "name": "Goblin Inc",
+      "price": 250000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "retail",
+      "basePrice": 250000
+    },
+    "EMAS": {
+      "name": "Tambang Emas Tbk",
+      "price": 2500000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "tambang",
+      "basePrice": 2500000
+    },
+    "DRAGON": {
+      "name": "Dragon Air",
+      "price": 750000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "transportasi",
+      "basePrice": 750000
+    },
+    "MITHRIL": {
+      "name": "Mithril Resources",
+      "price": 1800000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "tambang",
+      "basePrice": 1800000
+    },
+    "DUNGEON": {
+      "name": "Dungeon Explore Tbk",
+      "price": 950000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "hiburan",
+      "basePrice": 950000
+    },
+    "POTION": {
+      "name": "Potion Pharma",
+      "price": 450000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "farmasi",
+      "basePrice": 450000
+    },
+    "RUNE": {
+      "name": "Rune Tech",
+      "price": 1100000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "teknologi",
+      "basePrice": 1100000
+    },
+    "FISH": {
+      "name": "Ocean Fish Corp",
+      "price": 320000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "konsumsi",
+      "basePrice": 320000
+    },
+    "ARMA": {
+      "name": "Armament Kingdom",
+      "price": 3500000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "pertahanan",
+      "basePrice": 3500000
+    },
+    "HERB": {
+      "name": "Herbal Nature Co",
+      "price": 680000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "farmasi",
+      "basePrice": 680000
+    },
+    "CRYSTAL": {
+      "name": "Crystal Mine Corp",
+      "price": 4200000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "tambang",
+      "basePrice": 4200000
+    },
+    "ORICHAL": {
+      "name": "Orichalcum Industries",
+      "price": 8500000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "tambang",
+      "basePrice": 8500000
+    },
+    "PHOENIX": {
+      "name": "Phoenix Energy Tbk",
+      "price": 5000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "energi",
+      "basePrice": 5000000
+    },
+    "SHADOW": {
+      "name": "Shadow Corp",
+      "price": 2700000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "teknologi",
+      "basePrice": 2700000
+    },
+    "LICH": {
+      "name": "Lich King Holdings",
+      "price": 9900000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "keuangan",
+      "basePrice": 9900000
+    },
+    "KRAKEN": {
+      "name": "Kraken Shipping Lines",
+      "price": 6600000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "transportasi",
+      "basePrice": 6600000
+    },
+    "ELVWOOD": {
+      "name": "Elven Wood Industries",
+      "price": 1500000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "properti",
+      "basePrice": 1500000
+    },
+    "GODBLESS": {
+      "name": "God Blessing Fund",
+      "price": 25000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "keuangan",
+      "basePrice": 25000000
+    },
+    "VOID": {
+      "name": "Void Dimension Corp",
+      "price": 75000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "teknologi",
+      "basePrice": 75000000
+    },
+    "DRAGONX": {
+      "name": "DragonX Holdings",
+      "price": 150000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "energi",
+      "basePrice": 150000000
+    },
+    "DIVINECO": {
+      "name": "Divine Corp Ltd",
+      "price": 500000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "keuangan",
+      "basePrice": 500000000
+    },
+    "OMEGAX": {
+      "name": "OmegaX Syndicate",
+      "price": 1000000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "pertahanan",
+      "basePrice": 1000000000
+    },
+    "GALACTA": {
+      "name": "Galacta Universe Fund",
+      "price": 2500000000,
+      "change": 0,
+      "lastUpdate": 1782054453630,
+      "category": "keuangan",
+      "basePrice": 2500000000
+    }
+  },
+  "properti": {
+    "warung": {
+      "name": "Warung Makan",
+      "price": 5000000,
+      "description": "Warung sederhana pinggir jalan",
+      "passive": 50000
+    },
+    "rumah_kecil": {
+      "name": "Rumah Kecil",
+      "price": 25000000,
+      "description": "Rumah 1 kamar di pinggiran kota",
+      "passive": 200000
+    },
+    "kos_kosan": {
+      "name": "Kos-kosan",
+      "price": 80000000,
+      "description": "10 kamar kos strategis deket kampus",
+      "passive": 800000
+    },
+    "apartemen": {
+      "name": "Apartemen Studio",
+      "price": 150000000,
+      "description": "Apartemen studio di pusat kota",
+      "passive": 1500000
+    },
+    "gudang": {
+      "name": "Gudang Logistik",
+      "price": 200000000,
+      "description": "Gudang 500m² dekat pelabuhan",
+      "passive": 1200000
+    },
+    "ruko": {
+      "name": "Ruko Komersial",
+      "price": 350000000,
+      "description": "Ruko 2 lantai lokasi premium",
+      "passive": 3000000
+    },
+    "rumah_mewah": {
+      "name": "Rumah Mewah",
+      "price": 750000000,
+      "description": "Rumah 4 kamar + kolam renang + taman",
+      "passive": 5000000
+    },
+    "villa": {
+      "name": "Villa Tepi Pantai",
+      "price": 1500000000,
+      "description": "Villa eksklusif view laut langsung",
+      "passive": 10000000
+    },
+    "hotel_bintang": {
+      "name": "Hotel Bintang 3",
+      "price": 3000000000,
+      "description": "Hotel 30 kamar di jantung kota",
+      "passive": 30000000
+    },
+    "mall_mini": {
+      "name": "Mini Mall",
+      "price": 5000000000,
+      "description": "Mini mall 2 lantai 20+ tenant",
+      "passive": 60000000
+    },
+    "menara_kantor": {
+      "name": "Menara Kantor",
+      "price": 8000000000,
+      "description": "Gedung perkantoran 10 lantai",
+      "passive": 90000000
+    },
+    "pulau_pribadi": {
+      "name": "Pulau Pribadi",
+      "price": 50000000000,
+      "description": "Pulau kecil eksklusif milik sendiri",
+      "passive": 500000000
+    },
+    "pabrik_senjata": {
+      "name": "Pabrik Senjata",
+      "price": 12000000000,
+      "description": "Pabrik produksi senjata & armor",
+      "passive": 150000000
+    },
+    "kebun_raya": {
+      "name": "Kebun Raya Herbal",
+      "price": 2000000000,
+      "description": "Kebun herbal seluas 50 hektar",
+      "passive": 20000000
+    },
+    "kastil": {
+      "name": "Kastil Megah",
+      "price": 100000000000,
+      "description": "Kastil legendaris dengan 50 ruangan",
+      "passive": 1000000000
+    },
+    "kota_buatan": {
+      "name": "Kota Buatan Sendiri",
+      "price": 500000000000,
+      "description": "Kota mini dengan 100.000 penduduk",
+      "passive": 5000000000
+    },
+    "istana_dewa": {
+      "name": "Istana Dewa",
+      "price": 1000000000000,
+      "description": "Istana surgawi di awan, satu-satunya di dunia",
+      "passive": 10000000000
+    },
+    "benua_pribadi": {
+      "name": "Benua Pribadi",
+      "price": 5000000000000,
+      "description": "Benua seluas Eropa, milik sendiri",
+      "passive": 50000000000
+    },
+    "planet_buatan": {
+      "name": "Planet Buatan",
+      "price": 99000000000000,
+      "description": "Planet artifisial berteknologi terdepan",
+      "passive": 999000000000
+    }
+  },
+  "kendaraan": {
+    "motor": {
+      "name": "Motor Biasa",
+      "price": 3000000,
+      "description": "Motor matic 125cc",
+      "passive": 0
+    },
+    "motor_listrik": {
+      "name": "Motor Listrik",
+      "price": 8000000,
+      "description": "Motor listrik ramah lingkungan",
+      "passive": 0
+    },
+    "mobil_city": {
+      "name": "Mobil City Car",
+      "price": 25000000,
+      "description": "Mobil kecil irit BBM",
+      "passive": 0
+    },
+    "pickup": {
+      "name": "Pickup Truck",
+      "price": 60000000,
+      "description": "Pickup double cabin serba guna",
+      "passive": 500000
+    },
+    "truk": {
+      "name": "Truk Pengiriman",
+      "price": 150000000,
+      "description": "Truk angkutan barang 10 ton",
+      "passive": 2000000
+    },
+    "mobil_sport": {
+      "name": "Mobil Sport",
+      "price": 500000000,
+      "description": "Supercar 600hp",
+      "passive": 0
+    },
+    "bus_mini": {
+      "name": "Bus Mini",
+      "price": 350000000,
+      "description": "Angkutan umum 20 penumpang",
+      "passive": 5000000
+    },
+    "kapal_cargo": {
+      "name": "Kapal Cargo",
+      "price": 2000000000,
+      "description": "Kapal pengiriman antar pulau",
+      "passive": 20000000
+    },
+    "helikopter": {
+      "name": "Helikopter",
+      "price": 3500000000,
+      "description": "Heli pribadi 4 penumpang",
+      "passive": 0
+    },
+    "yacht": {
+      "name": "Yacht Mewah",
+      "price": 8000000000,
+      "description": "Kapal pesiar pribadi mewah",
+      "passive": 0
+    },
+    "jet_pribadi": {
+      "name": "Jet Pribadi",
+      "price": 15000000000,
+      "description": "Jet mewah kapasitas 8 orang",
+      "passive": 0
+    },
+    "kapal_perang": {
+      "name": "Kapal Perang",
+      "price": 50000000000,
+      "description": "Fregat bersenjata lengkap",
+      "passive": 50000000
+    },
+    "tank_tempur": {
+      "name": "Tank Tempur",
+      "price": 25000000000,
+      "description": "Main battle tank berlapis baja",
+      "passive": 0
+    },
+    "pesawat_tempur": {
+      "name": "Pesawat Tempur",
+      "price": 80000000000,
+      "description": "Fighter jet generasi terbaru",
+      "passive": 0
+    },
+    "kapal_luar_angkasa": {
+      "name": "Kapal Luar Angkasa",
+      "price": 999000000000,
+      "description": "Roket interplanet buatan sendiri",
+      "passive": 0
+    },
+    "kapal_induk": {
+      "name": "Kapal Induk",
+      "price": 5000000000000,
+      "description": "Aircraft carrier lengkap dgn 80 pesawat",
+      "passive": 500000000
+    },
+    "stasiun_luar_angkasa": {
+      "name": "Stasiun Luar Angkasa",
+      "price": 20000000000000,
+      "description": "Space station orbit bumi, kapasitas 100 org",
+      "passive": 1000000000
+    },
+    "death_star": {
+      "name": "Death Star Mini",
+      "price": 100000000000000,
+      "description": "Senjata orbital terkuat di galaksi",
+      "passive": 0
+    },
+    "thor_hammer": {
+      "name": "Kapal Thor Hammer",
+      "price": 999000000000000,
+      "description": "THE ULTIMATE VEHICLE — melampaui segalanya",
+      "passive": 10000000000
+    }
+  },
+  "listings": []
+}

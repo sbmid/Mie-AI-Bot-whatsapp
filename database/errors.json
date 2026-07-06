@@ -1,0 +1,10 @@
+[
+  {
+    "plugin": "ping",
+    "command": "ping",
+    "error": "Plugin [ping] timeout setelah 30 detik",
+    "count": 2,
+    "timestamp": 1783346545378,
+    "last_seen": 1783346576649
+  }
+]

@@ -1,0 +1,13 @@
+node_modules/
+.env
+package-lock.json
+brain/
+scratch/
+session/
+.system_generated/
+*.log
+*.mp4
+*.ogg
+*.webp
+*.jpg
+*.png

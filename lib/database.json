@@ -1,0 +1,1558 @@
+{
+  "users": {
+    "94300352282641@lid": {
+      "xp": 65,
+      "level": 15,
+      "lastChat": 1771461218376,
+      "registered": true,
+      "name": "azrial",
+      "afkTime": -1,
+      "afkReason": "",
+      "lastWarned": 1771255022301,
+      "balance": 1000,
+      "pcLimit": 5,
+      "lastDaily": 0
+    },
+    "62899896737965@lid": {
+      "xp": 66,
+      "level": 6,
+      "lastChat": 1771265862197,
+      "registered": true,
+      "name": "kiryu1234"
+    },
+    "153047082782963@lid": {
+      "xp": 85,
+      "level": 4,
+      "lastChat": 1771283519630,
+      "registered": true,
+      "name": "pakong"
+    },
+    "270158190927965@lid": {
+      "xp": 158,
+      "level": 1,
+      "lastChat": 1771249644363,
+      "registered": true,
+      "name": "dipaimud"
+    },
+    "133999406129155@lid": {
+      "xp": 41,
+      "level": 1,
+      "lastChat": 1771234801727,
+      "registered": false,
+      "name": ""
+    },
+    "44607647826023@lid": {
+      "xp": 384,
+      "level": 2,
+      "lastChat": 1771343395506,
+      "registered": true,
+      "name": "nama_kamu",
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "51892113699021@lid": {
+      "xp": 18,
+      "level": 3,
+      "lastChat": 1771248244166,
+      "registered": true,
+      "name": "kael"
+    },
+    "17515564552254@lid": {
+      "xp": 127,
+      "level": 5,
+      "lastChat": 1771261568889,
+      "registered": true,
+      "name": "pia",
+      "afkTime": 1771261602598,
+      "afkReason": "afk adalah pokoknya"
+    },
+    "68135394750498@lid": {
+      "xp": 83,
+      "level": 2,
+      "lastChat": 1771239449300,
+      "registered": true,
+      "name": "vio_na"
+    },
+    "216763358781472@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234801704,
+      "registered": false,
+      "name": ""
+    },
+    "158141316624585@lid": {
+      "xp": 18,
+      "level": 1,
+      "lastChat": 1771234801836,
+      "registered": false,
+      "name": ""
+    },
+    "122900506013731@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771234801917,
+      "registered": false,
+      "name": ""
+    },
+    "141034596081743@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234802038,
+      "registered": false,
+      "name": ""
+    },
+    "271455321366587@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234802316,
+      "registered": false,
+      "name": ""
+    },
+    "248485802676245@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234802481,
+      "registered": false,
+      "name": ""
+    },
+    "209092262002914@lid": {
+      "xp": 14,
+      "level": 2,
+      "lastChat": 1771255539676,
+      "registered": true,
+      "name": "adithia"
+    },
+    "260180797341807@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234802594,
+      "registered": false,
+      "name": ""
+    },
+    "156551977390250@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234802891,
+      "registered": false,
+      "name": ""
+    },
+    "34849532436686@lid": {
+      "xp": 13,
+      "level": 1,
+      "lastChat": 1771234802932,
+      "registered": false,
+      "name": ""
+    },
+    "72825901723691@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234802963,
+      "registered": false,
+      "name": ""
+    },
+    "89726681927702@lid": {
+      "xp": 27,
+      "level": 1,
+      "lastChat": 1771234802981,
+      "registered": false,
+      "name": ""
+    },
+    "197680198324475@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234803030,
+      "registered": false,
+      "name": ""
+    },
+    "220783330779278@lid": {
+      "xp": 23,
+      "level": 1,
+      "lastChat": 1771234803057,
+      "registered": false,
+      "name": ""
+    },
+    "7765334466781@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234803075,
+      "registered": false,
+      "name": ""
+    },
+    "28579366760585@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234803384,
+      "registered": false,
+      "name": ""
+    },
+    "267160068853812@lid": {
+      "xp": 18,
+      "level": 1,
+      "lastChat": 1771234803491,
+      "registered": false,
+      "name": ""
+    },
+    "87952776495233@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234803552,
+      "registered": false,
+      "name": ""
+    },
+    "153626970439702@lid": {
+      "xp": 167,
+      "level": 1,
+      "lastChat": 1771246059622,
+      "registered": true,
+      "name": "daftar nama_kamu"
+    },
+    "40248826441835@lid": {
+      "xp": 43,
+      "level": 1,
+      "lastChat": 1771247964079,
+      "registered": false,
+      "name": ""
+    },
+    "143748814139513@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234803850,
+      "registered": false,
+      "name": ""
+    },
+    "230906048569558@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234803908,
+      "registered": false,
+      "name": ""
+    },
+    "159992162312262@lid": {
+      "xp": 13,
+      "level": 1,
+      "lastChat": 1771234803940,
+      "registered": false,
+      "name": ""
+    },
+    "213876956213343@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234803961,
+      "registered": false,
+      "name": ""
+    },
+    "49791622971642@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234804067,
+      "registered": false,
+      "name": ""
+    },
+    "5201842950291@lid": {
+      "xp": 59,
+      "level": 2,
+      "lastChat": 1771263710821,
+      "registered": true,
+      "name": "Zaky."
+    },
+    "244495744557174@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234804353,
+      "registered": false,
+      "name": ""
+    },
+    "248562692665504@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234804376,
+      "registered": false,
+      "name": ""
+    },
+    "62835975540957@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771234804397,
+      "registered": false,
+      "name": ""
+    },
+    "154172162879509@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234804432,
+      "registered": false,
+      "name": ""
+    },
+    "267190049730778@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234804498,
+      "registered": false,
+      "name": ""
+    },
+    "68053924597787@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234804514,
+      "registered": false,
+      "name": ""
+    },
+    "146205501825088@lid": {
+      "xp": 23,
+      "level": 1,
+      "lastChat": 1771234804561,
+      "registered": false,
+      "name": ""
+    },
+    "75552987848837@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234804590,
+      "registered": false,
+      "name": ""
+    },
+    "124820624793855@lid": {
+      "xp": 1,
+      "level": 2,
+      "lastChat": 1771283122072,
+      "registered": true,
+      "name": "eja_imuop"
+    },
+    "130390996033789@lid": {
+      "xp": 30,
+      "level": 2,
+      "lastChat": 1771267257716,
+      "registered": true,
+      "name": "aullcntik"
+    },
+    "45999837962457@lid": {
+      "xp": 12,
+      "level": 1,
+      "lastChat": 1771234804713,
+      "registered": false,
+      "name": ""
+    },
+    "93806531739839@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771234804783,
+      "registered": false,
+      "name": ""
+    },
+    "91096726114480@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234804815,
+      "registered": false,
+      "name": ""
+    },
+    "31138999484471@lid": {
+      "xp": 34,
+      "level": 1,
+      "lastChat": 1771244052340,
+      "registered": false,
+      "name": ""
+    },
+    "185457057001659@lid": {
+      "xp": 12,
+      "level": 1,
+      "lastChat": 1771234804974,
+      "registered": false,
+      "name": ""
+    },
+    "195992326520858@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234805021,
+      "registered": false,
+      "name": ""
+    },
+    "205626575696006@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234805064,
+      "registered": false,
+      "name": ""
+    },
+    "108937701548075@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234805098,
+      "registered": false,
+      "name": ""
+    },
+    "155847468527806@lid": {
+      "xp": 33,
+      "level": 1,
+      "lastChat": 1771459440097,
+      "registered": false,
+      "name": ""
+    },
+    "59004898246821@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234805185,
+      "registered": false,
+      "name": ""
+    },
+    "121324756279547@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234805240,
+      "registered": false,
+      "name": ""
+    },
+    "162431619829870@lid": {
+      "xp": 13,
+      "level": 1,
+      "lastChat": 1771234805351,
+      "registered": false,
+      "name": ""
+    },
+    "143361864388628@lid": {
+      "xp": 34,
+      "level": 2,
+      "lastChat": 1771247130713,
+      "registered": true,
+      "name": "namamu"
+    },
+    "154391826940129@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234805412,
+      "registered": false,
+      "name": ""
+    },
+    "179800434057347@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234805438,
+      "registered": false,
+      "name": ""
+    },
+    "44633333747803@lid": {
+      "xp": 27,
+      "level": 1,
+      "lastChat": 1771234805466,
+      "registered": false,
+      "name": ""
+    },
+    "192990479908915@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234805485,
+      "registered": false,
+      "name": ""
+    },
+    "64239993663517@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234805519,
+      "registered": false,
+      "name": ""
+    },
+    "84555675521083@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234805545,
+      "registered": false,
+      "name": ""
+    },
+    "85436009582607@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234805566,
+      "registered": false,
+      "name": ""
+    },
+    "226298135838742@lid": {
+      "xp": 71,
+      "level": 3,
+      "lastChat": 1771236048323,
+      "registered": true,
+      "name": "Erika"
+    },
+    "248065030127667@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234805826,
+      "registered": false,
+      "name": ""
+    },
+    "272139781431463@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234805866,
+      "registered": false,
+      "name": ""
+    },
+    "231533449334847@lid": {
+      "xp": 180,
+      "level": 1,
+      "lastChat": 1771254098690,
+      "registered": true,
+      "name": "uqiww"
+    },
+    "188029893345316@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234805963,
+      "registered": false,
+      "name": ""
+    },
+    "23837487927328@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234806006,
+      "registered": false,
+      "name": ""
+    },
+    "56715647152229@lid": {
+      "xp": 176,
+      "level": 1,
+      "lastChat": 1771261046324,
+      "registered": true,
+      "name": "celi"
+    },
+    "84104687173637@lid": {
+      "xp": 13,
+      "level": 1,
+      "lastChat": 1771234806100,
+      "registered": false,
+      "name": ""
+    },
+    "25345055006967@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234806139,
+      "registered": false,
+      "name": ""
+    },
+    "32096944935023@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234806160,
+      "registered": false,
+      "name": ""
+    },
+    "25319067119835@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234806180,
+      "registered": false,
+      "name": ""
+    },
+    "26109844435004@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234806197,
+      "registered": false,
+      "name": ""
+    },
+    "215238376947823@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234806213,
+      "registered": false,
+      "name": ""
+    },
+    "152575055794236@lid": {
+      "xp": 36,
+      "level": 1,
+      "lastChat": 1771253001852,
+      "registered": false,
+      "name": ""
+    },
+    "202482458353685@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234806303,
+      "registered": false,
+      "name": ""
+    },
+    "96044142559416@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234806320,
+      "registered": false,
+      "name": ""
+    },
+    "122686277726258@lid": {
+      "xp": 23,
+      "level": 1,
+      "lastChat": 1771234806526,
+      "registered": false,
+      "name": ""
+    },
+    "178310248153147@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234806551,
+      "registered": false,
+      "name": ""
+    },
+    "105076626587873@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234806583,
+      "registered": false,
+      "name": ""
+    },
+    "51234933334122@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234806665,
+      "registered": false,
+      "name": ""
+    },
+    "94674517758079@lid": {
+      "xp": 130,
+      "level": 1,
+      "lastChat": 1771249712480,
+      "registered": true,
+      "name": "dipaa"
+    },
+    "56702544150663@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234806719,
+      "registered": false,
+      "name": ""
+    },
+    "181338317582443@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234806762,
+      "registered": false,
+      "name": ""
+    },
+    "178769876807739@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234806778,
+      "registered": false,
+      "name": ""
+    },
+    "135459325907192@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234806838,
+      "registered": false,
+      "name": ""
+    },
+    "213460092760170@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234806868,
+      "registered": false,
+      "name": ""
+    },
+    "166022682276088@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234806904,
+      "registered": false,
+      "name": ""
+    },
+    "97234318274619@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234806945,
+      "registered": false,
+      "name": ""
+    },
+    "16999950344272@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234807016,
+      "registered": false,
+      "name": ""
+    },
+    "238895191052491@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234807046,
+      "registered": false,
+      "name": ""
+    },
+    "78035579617489@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234807067,
+      "registered": false,
+      "name": ""
+    },
+    "210355234058423@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234807206,
+      "registered": false,
+      "name": ""
+    },
+    "210981762404401@lid": {
+      "xp": 34,
+      "level": 1,
+      "lastChat": 1771348366003,
+      "registered": false,
+      "name": ""
+    },
+    "67693164138557@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771234807295,
+      "registered": false,
+      "name": ""
+    },
+    "153399555260544@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234807313,
+      "registered": false,
+      "name": ""
+    },
+    "102834938855511@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234807348,
+      "registered": false,
+      "name": ""
+    },
+    "45720463794430@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234807847,
+      "registered": false,
+      "name": ""
+    },
+    "199330136858626@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234807964,
+      "registered": false,
+      "name": ""
+    },
+    "233938748477478@lid": {
+      "xp": 41,
+      "level": 1,
+      "lastChat": 1771252874655,
+      "registered": false,
+      "name": ""
+    },
+    "103921045524574@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234808048,
+      "registered": false,
+      "name": ""
+    },
+    "95185300103244@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771234808074,
+      "registered": false,
+      "name": ""
+    },
+    "66821671653508@lid": {
+      "xp": 18,
+      "level": 1,
+      "lastChat": 1771234808092,
+      "registered": false,
+      "name": ""
+    },
+    "102211984040139@lid": {
+      "xp": 21,
+      "level": 1,
+      "lastChat": 1771234808116,
+      "registered": false,
+      "name": ""
+    },
+    "11584097263815@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234808138,
+      "registered": false,
+      "name": ""
+    },
+    "170446246903914@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234808167,
+      "registered": false,
+      "name": ""
+    },
+    "117635463254233@lid": {
+      "xp": 53,
+      "level": 1,
+      "lastChat": 1771241996527,
+      "registered": false,
+      "name": ""
+    },
+    "122037838332106@lid": {
+      "xp": 11,
+      "level": 2,
+      "lastChat": 1771271147793,
+      "registered": true,
+      "name": "wildaprimaa"
+    },
+    "196791626633441@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234808406,
+      "registered": false,
+      "name": ""
+    },
+    "214039997235274@lid": {
+      "xp": 27,
+      "level": 1,
+      "lastChat": 1771234808436,
+      "registered": false,
+      "name": ""
+    },
+    "153700001685755@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234808671,
+      "registered": false,
+      "name": ""
+    },
+    "156130701496329@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234816958,
+      "registered": false,
+      "name": ""
+    },
+    "217428508299447@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234816994,
+      "registered": false,
+      "name": ""
+    },
+    "115685413929074@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234817030,
+      "registered": false,
+      "name": ""
+    },
+    "24676080296098@lid": {
+      "xp": 25,
+      "level": 3,
+      "lastChat": 1771252305081,
+      "registered": true,
+      "name": "ata sebelum before"
+    },
+    "49259600695497@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234817246,
+      "registered": false,
+      "name": ""
+    },
+    "100614591803625@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234817311,
+      "registered": false,
+      "name": ""
+    },
+    "20384468484119@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234817359,
+      "registered": false,
+      "name": ""
+    },
+    "253021338492966@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771234817394,
+      "registered": false,
+      "name": ""
+    },
+    "215912921702439@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771234817448,
+      "registered": false,
+      "name": ""
+    },
+    "89318341263534@lid": {
+      "xp": 20,
+      "level": 1,
+      "lastChat": 1771234817478,
+      "registered": false,
+      "name": ""
+    },
+    "120530053124224@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234817509,
+      "registered": false,
+      "name": ""
+    },
+    "120556108144676@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234817555,
+      "registered": false,
+      "name": ""
+    },
+    "183322139431089@lid": {
+      "xp": 12,
+      "level": 1,
+      "lastChat": 1771234817594,
+      "registered": false,
+      "name": ""
+    },
+    "193239822925851@lid": {
+      "xp": 53,
+      "level": 1,
+      "lastChat": 1771256267987,
+      "registered": false,
+      "name": ""
+    },
+    "97702419406915@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234817666,
+      "registered": false,
+      "name": ""
+    },
+    "66799827693604@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234817706,
+      "registered": false,
+      "name": ""
+    },
+    "80844270108721@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234817745,
+      "registered": false,
+      "name": ""
+    },
+    "102873727811620@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234817819,
+      "registered": false,
+      "name": ""
+    },
+    "38736427528325@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234817905,
+      "registered": false,
+      "name": ""
+    },
+    "249477587837118@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234818009,
+      "registered": false,
+      "name": ""
+    },
+    "272301127946419@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771234818037,
+      "registered": false,
+      "name": ""
+    },
+    "168976982253805@lid": {
+      "xp": 18,
+      "level": 1,
+      "lastChat": 1771234818059,
+      "registered": false,
+      "name": ""
+    },
+    "161933336527079@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234818171,
+      "registered": false,
+      "name": ""
+    },
+    "86140451348653@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771234818578,
+      "registered": false,
+      "name": ""
+    },
+    "180216844550334@lid": {
+      "xp": 18,
+      "level": 1,
+      "lastChat": 1771234818620,
+      "registered": false,
+      "name": ""
+    },
+    "55722905718986@lid": {
+      "xp": 140,
+      "level": 1,
+      "lastChat": 1771242048133,
+      "registered": true,
+      "name": "aruna"
+    },
+    "212979224199390@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234818665,
+      "registered": false,
+      "name": ""
+    },
+    "179079215055073@lid": {
+      "xp": 21,
+      "level": 1,
+      "lastChat": 1771234818707,
+      "registered": false,
+      "name": ""
+    },
+    "145857693388818@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771234818766,
+      "registered": false,
+      "name": ""
+    },
+    "48185439465720@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234818859,
+      "registered": false,
+      "name": ""
+    },
+    "231752324903082@lid": {
+      "xp": 53,
+      "level": 2,
+      "lastChat": 1771282567501,
+      "registered": true,
+      "name": "reza"
+    },
+    "99686660763801@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771234819150,
+      "registered": false,
+      "name": ""
+    },
+    "26049312239776@lid": {
+      "xp": 32,
+      "level": 2,
+      "lastChat": 1771285776627,
+      "registered": true,
+      "name": "zzi"
+    },
+    "157664004812938@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234819282,
+      "registered": false,
+      "name": ""
+    },
+    "269127046402056@lid": {
+      "xp": 13,
+      "level": 1,
+      "lastChat": 1771234819335,
+      "registered": false,
+      "name": ""
+    },
+    "190138856517850@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771234819399,
+      "registered": false,
+      "name": ""
+    },
+    "244530070700038@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234819423,
+      "registered": false,
+      "name": ""
+    },
+    "270565994676237@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771234819477,
+      "registered": false,
+      "name": ""
+    },
+    "166666877014029@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234819509,
+      "registered": false,
+      "name": ""
+    },
+    "98548158845128@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771234819536,
+      "registered": false,
+      "name": ""
+    },
+    "50831625830438@lid": {
+      "xp": 21,
+      "level": 1,
+      "lastChat": 1771234819577,
+      "registered": false,
+      "name": ""
+    },
+    "113606196727924@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234820027,
+      "registered": false,
+      "name": ""
+    },
+    "175045720678420@lid": {
+      "xp": 29,
+      "level": 3,
+      "lastChat": 1771283794636,
+      "registered": true,
+      "name": "lqa_njai"
+    },
+    "235807193440354@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234822653,
+      "registered": false,
+      "name": ""
+    },
+    "215186904481954@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771234824040,
+      "registered": false,
+      "name": ""
+    },
+    "238968306163720@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234825705,
+      "registered": false,
+      "name": ""
+    },
+    "6287753362932@s.whatsapp.net": {
+      "xp": 36,
+      "level": 2,
+      "lastChat": 1771284913993,
+      "registered": false,
+      "name": ""
+    },
+    "30331696636047@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234825881,
+      "registered": false,
+      "name": ""
+    },
+    "60069412642828@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234829698,
+      "registered": false,
+      "name": ""
+    },
+    "52502384918749@lid": {
+      "xp": 73,
+      "level": 2,
+      "lastChat": 1771287411762,
+      "registered": true,
+      "name": "alya"
+    },
+    "91891311886506@lid": {
+      "xp": 23,
+      "level": 1,
+      "lastChat": 1771234841663,
+      "registered": false,
+      "name": ""
+    },
+    "48847904628906@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234849172,
+      "registered": false,
+      "name": ""
+    },
+    "65842402357392@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771234849751,
+      "registered": false,
+      "name": ""
+    },
+    "235471749824683@lid": {
+      "xp": 24,
+      "level": 1,
+      "lastChat": 1771234851824,
+      "registered": false,
+      "name": ""
+    },
+    "197929306447898@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771234852732,
+      "registered": false,
+      "name": ""
+    },
+    "208362000121994@lid": {
+      "xp": 21,
+      "level": 1,
+      "lastChat": 1771234880336,
+      "registered": false,
+      "name": ""
+    },
+    "54800007880880@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771234891316,
+      "registered": false,
+      "name": ""
+    },
+    "155212065067017@lid": {
+      "xp": 15,
+      "level": 1,
+      "lastChat": 1771234912713,
+      "registered": false,
+      "name": ""
+    },
+    "191332421230594@lid": {
+      "xp": 23,
+      "level": 1,
+      "lastChat": 1771234927319,
+      "registered": false,
+      "name": ""
+    },
+    "151634172719187@lid": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771234951561,
+      "registered": false,
+      "name": ""
+    },
+    "122191869923566@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771235001007,
+      "registered": false,
+      "name": ""
+    },
+    "213889757245618@lid": {
+      "xp": 16,
+      "level": 1,
+      "lastChat": 1771235019289,
+      "registered": false,
+      "name": ""
+    },
+    "211922863546438@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771235097678,
+      "registered": false,
+      "name": ""
+    },
+    "171790823342221@lid": {
+      "xp": 122,
+      "level": 9,
+      "lastChat": 1771289404479,
+      "registered": true,
+      "name": "CS SBM",
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "52996104806554@lid": {
+      "xp": 25,
+      "level": 1,
+      "lastChat": 1771235528791,
+      "registered": false,
+      "name": ""
+    },
+    "68672936739038@lid": {
+      "xp": 30,
+      "level": 1,
+      "lastChat": 1771235836584,
+      "registered": false,
+      "name": ""
+    },
+    "60950283567173@lid": {
+      "xp": 28,
+      "level": 1,
+      "lastChat": 1771236383895,
+      "registered": false,
+      "name": ""
+    },
+    "62307358998645@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771236500120,
+      "registered": false,
+      "name": ""
+    },
+    "6919863406633@lid": {
+      "xp": 84,
+      "level": 2,
+      "lastChat": 1771255390615,
+      "registered": true,
+      "name": "sofia"
+    },
+    "106825013829887@lid": {
+      "xp": 22,
+      "level": 1,
+      "lastChat": 1771237232983,
+      "registered": false,
+      "name": ""
+    },
+    "72889973907531@lid": {
+      "xp": 47,
+      "level": 1,
+      "lastChat": 1771284488824,
+      "registered": false,
+      "name": ""
+    },
+    "92973576491090@lid": {
+      "xp": 247,
+      "level": 1,
+      "lastChat": 1771288517254,
+      "registered": true,
+      "name": "Thxsnm"
+    },
+    "101258182574245@lid": {
+      "xp": 91,
+      "level": 2,
+      "lastChat": 1771259285350,
+      "registered": true,
+      "name": "apip"
+    },
+    "253914758783155@lid": {
+      "xp": 12,
+      "level": 1,
+      "lastChat": 1771241818031,
+      "registered": false,
+      "name": ""
+    },
+    "122514395136058@lid": {
+      "xp": 95,
+      "level": 2,
+      "lastChat": 1771244185399,
+      "registered": true,
+      "name": "jake"
+    },
+    "181381032325246@lid": {
+      "xp": 27,
+      "level": 1,
+      "lastChat": 1771243170010,
+      "registered": false,
+      "name": ""
+    },
+    "169655838707712@lid": {
+      "xp": 11,
+      "level": 1,
+      "lastChat": 1771243346521,
+      "registered": false,
+      "name": ""
+    },
+    "102882066067504@lid": {
+      "xp": 52,
+      "level": 3,
+      "lastChat": 1771264525344,
+      "registered": false,
+      "name": ""
+    },
+    "238778908147878@lid": {
+      "xp": 45,
+      "level": 4,
+      "lastChat": 1771288876235,
+      "registered": true,
+      "name": "zera"
+    },
+    "277193213128836@lid": {
+      "xp": 21,
+      "level": 1,
+      "lastChat": 1771245218862,
+      "registered": false,
+      "name": ""
+    },
+    "235158552752207@lid": {
+      "xp": 141,
+      "level": 1,
+      "lastChat": 1771245604802,
+      "registered": true,
+      "name": "daftar rin. lpp"
+    },
+    "98457998114944@lid": {
+      "xp": 29,
+      "level": 1,
+      "lastChat": 1771245838564,
+      "registered": false,
+      "name": ""
+    },
+    "74372157014029@lid": {
+      "xp": 14,
+      "level": 1,
+      "lastChat": 1771252518092,
+      "registered": false,
+      "name": ""
+    },
+    "231336132485308@lid": {
+      "xp": 62,
+      "level": 2,
+      "lastChat": 1771270003330,
+      "registered": true,
+      "name": "wawaNyawit"
+    },
+    "78873450512626@lid": {
+      "xp": 48,
+      "level": 2,
+      "lastChat": 1771261564453,
+      "registered": true,
+      "name": "nama_kamu"
+    },
+    "80118940733463@lid": {
+      "xp": 77,
+      "level": 2,
+      "lastChat": 1771264814376,
+      "registered": false,
+      "name": ""
+    },
+    "87579164688479@lid": {
+      "xp": 10,
+      "level": 1,
+      "lastChat": 1771261970552,
+      "registered": false,
+      "name": ""
+    },
+    "117119479996437@lid": {
+      "xp": 26,
+      "level": 1,
+      "lastChat": 1771264350618,
+      "registered": false,
+      "name": ""
+    },
+    "60898442010857@lid": {
+      "xp": 5,
+      "level": 2,
+      "lastChat": 1771264625802,
+      "registered": true,
+      "name": "napis sigma"
+    },
+    "64588255084641@lid": {
+      "xp": 37,
+      "level": 1,
+      "lastChat": 1771270126659,
+      "registered": false,
+      "name": ""
+    },
+    "276995946606675@lid": {
+      "xp": 13,
+      "level": 2,
+      "lastChat": 1771281432624,
+      "registered": true,
+      "name": "mylitta_bella"
+    },
+    "6285147427809@s.whatsapp.net": {
+      "xp": 25,
+      "level": 2,
+      "lastChat": 1771438470515,
+      "registered": false,
+      "name": ""
+    },
+    "177863336697950@lid": {
+      "xp": 38,
+      "level": 1,
+      "lastChat": 1771338850997,
+      "registered": false,
+      "name": ""
+    },
+    "224334899589361@lid": {
+      "xp": 19,
+      "level": 1,
+      "lastChat": 1771340602552,
+      "registered": false,
+      "name": ""
+    },
+    "6285947382893@s.whatsapp.net": {
+      "xp": 60,
+      "level": 1,
+      "lastChat": 1771432423074,
+      "registered": false,
+      "name": ""
+    },
+    "147640171925588@lid": {
+      "xp": 395,
+      "level": 5,
+      "lastChat": 1771461062434,
+      "registered": true,
+      "name": "bot",
+      "balance": 1000,
+      "pcLimit": 5,
+      "lastDaily": 0
+    },
+    "6283809720392@s.whatsapp.net": {
+      "xp": 41,
+      "level": 1,
+      "lastChat": 1771447984905,
+      "registered": false,
+      "name": ""
+    },
+    "6283159554726@s.whatsapp.net": {
+      "xp": 17,
+      "level": 1,
+      "lastChat": 1771449793551,
+      "registered": false,
+      "name": ""
+    },
+    "6285964403872@s.whatsapp.net": {
+      "xp": 51,
+      "level": 1,
+      "lastChat": 1771456914705,
+      "registered": false,
+      "name": ""
+    },
+    "6283125337387@s.whatsapp.net": {
+      "xp": 53,
+      "level": 1,
+      "lastChat": 1771459279480,
+      "registered": false,
+      "name": ""
+    }
+  },
+  "groups": {
+    "120363132193413454@g.us": {
+      "welcome": true,
+      "leave": true
+    },
+    "120363406875578964@g.us": {
+      "welcome": false
+    },
+    "120363041586354634@g.us": {
+      "welcome": false
+    }
+  },
+  "chats": {
+    "120363422882054054@g.us": {
+      "listrs": {
+        "tes": "oi"
+      }
+    }
+  },
+  "reports": [],
+  "requests": [
+    {
+      "sender": "94300352282641@lid",
+      "name": "Manusia biasa",
+      "msg": "ya",
+      "from": "120363422882054054@g.us",
+      "time": "18/2/2026, 00.38.45"
+    }
+  ],
+  "settings": {
+    "undefined": {
+      "publicModePC": false
+    }
+  }
+}

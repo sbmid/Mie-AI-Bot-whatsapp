@@ -1,0 +1,12 @@
+{
+  "watch": [
+    "plugins/",
+    "lib/",
+    "start.js",
+    "config.js"
+  ],
+  "ext": "js,mjs",
+  "execMap": {
+    "js": "node"
+  }
+}

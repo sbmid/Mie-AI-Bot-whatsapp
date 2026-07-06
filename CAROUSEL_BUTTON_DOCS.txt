@@ -1,0 +1,169 @@
+DOKUMENTASI CAROUSEL & NATIVE FLOW BUTTONS
+============================================
+Sumber referensi: jagoanproject - 613
+File uji coba: plugins/owner/carouseltest.js
+File showcase: plugins/owner/testbtn.js
+
+==============================
+KENAPA CAROUSEL TIDAK MUNCUL DI HP?
+==============================
+Carousel yang dibuat dengan sock.sendMessage({ cards: [...] }) sering
+tidak muncul di WA Mobile karena WhatsApp Mobile memverifikasi apakah
+pengirim adalah akun Business resmi.
+
+SOLUSI: Gunakan Raw Protobuf + sock.relayMessage
+  - Menggunakan proto.Message.InteractiveMessage.create()
+  - Dikirim dengan sock.relayMessage() bukan sock.sendMessage()
+  - Dibungkus dalam viewOnceMessage dengan messageContextInfo
+
+==============================
+CARA MEMBUAT CAROUSEL (RAW PROTOBUF)
+==============================
+
+Langkah 1: Import yang dibutuhkan
+  const { proto, generateWAMessageFromContent, generateWAMessageContent } = require('@whiskeysockets/baileys');
+
+Langkah 2: Upload gambar ke CDN WA (WAJIB untuk tiap kartu)
+  const imageMessage = (
+      await generateWAMessageContent(
+          { image: { url: 'https://...' } },
+          { upload: sock.waUploadToServer }
+      )
+  ).imageMessage;
+
+Langkah 3: Buat array cards
+  const cards = [];
+  cards.push({
+      body:   proto.Message.InteractiveMessage.Body.fromObject({ text: 'Slide ke-1' }),
+      footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: 'Footer' }),
+      header: proto.Message.InteractiveMessage.Header.fromObject({
+          title: 'Judul Kartu',
+          hasMediaAttachment: true,
+          imageMessage   // <-- dari Langkah 2
+      }),
+      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+          buttons: [
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({
+                  display_text: 'Kunjungi',
+                  url: 'https://tiktok.com'
+              })}
+          ]
+      })
+  });
+
+Langkah 4: Rakit pesan interaktif
+  const msg = generateWAMessageFromContent(m.chat, {
+      viewOnceMessage: {
+          message: {
+              messageContextInfo: {
+                  deviceListMetadata: {},
+                  deviceListMetadataVersion: 2
+              },
+              interactiveMessage: proto.Message.InteractiveMessage.fromObject({
+                  body:   proto.Message.InteractiveMessage.Body.create({ text: 'Teks utama' }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({ text: 'Footer' }),
+                  header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
+                  carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
+              })
+          }
+      }
+  }, {});
+
+Langkah 5: Kirim paksa pakai relayMessage
+  await sock.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+
+==============================
+DAFTAR NATIVE FLOW BUTTONS
+==============================
+
+1. quick_reply
+   Tombol balas otomatis. Saat diklik, teks terkirim ke bot.
+   { name: 'quick_reply', buttonParamsJson: JSON.stringify({
+       display_text: 'Klik Saya',
+       id: 'id_unik'
+   })}
+
+2. cta_url
+   Tombol buka link eksternal (browser atau deep link WA).
+   { name: 'cta_url', buttonParamsJson: JSON.stringify({
+       display_text: 'Buka TikTok',
+       url: 'https://tiktok.com'
+       // Deep link WA: 'whatsapp://settings', 'whatsapp://status', dll
+   })}
+
+3. cta_copy
+   Tombol salin teks ke clipboard pengguna.
+   { name: 'cta_copy', buttonParamsJson: JSON.stringify({
+       display_text: 'Salin Kode',
+       copy_code: 'KODE-PROMO-123'
+   })}
+
+4. cta_call
+   Tombol langsung telepon ke nomor tertentu.
+   { name: 'cta_call', buttonParamsJson: JSON.stringify({
+       display_text: 'Telepon Kami',
+       phone_number: '6281234567890'
+   })}
+
+5. cta_reminder
+   Tombol buat pengingat di dalam WA.
+   { name: 'cta_reminder', buttonParamsJson: JSON.stringify({
+       display_text: 'Ingatkan Saya'
+   })}
+
+6. cta_cancel_reminder
+   Tombol batalkan pengingat.
+   { name: 'cta_cancel_reminder', buttonParamsJson: JSON.stringify({
+       display_text: 'Batal Pengingat'
+   })}
+
+7. address_message
+   Tombol minta pengguna kirim alamat.
+   { name: 'address_message', buttonParamsJson: JSON.stringify({
+       display_text: 'Kirim Alamat'
+   })}
+
+8. send_location
+   Tombol minta pengguna kirim lokasi GPS.
+   { name: 'send_location', buttonParamsJson: JSON.stringify({
+       display_text: 'Kirim Lokasi'
+   })}
+
+9. single_select  [LIST / MENU BUTTON]
+   Tombol buka pop-up menu dari bawah layar (Bottom Sheet List).
+   { name: 'single_select', buttonParamsJson: JSON.stringify({
+       title: 'Pilih Menu',
+       sections: [{
+           title: 'Kategori 1',
+           highlight_label: 'Populer',
+           rows: [
+               { header: 'H1', title: 'Opsi 1', description: 'Deskripsi', id: 'op1' },
+               { header: 'H2', title: 'Opsi 2', description: 'Deskripsi', id: 'op2' }
+           ]
+       }]
+   })}
+
+10. open_webview  [IN-APP BROWSER]
+    Tombol buka website langsung di dalam aplikasi WA.
+    { name: 'open_webview', buttonParamsJson: JSON.stringify({
+        title: 'Buka Web',
+        link: {
+            in_app_webview: true,
+            url: 'https://example.com'
+        }
+    })}
+
+11. cta_catalog  [KATALOG WA BISNIS]
+    Tombol buka katalog toko WA Business dari nomor tertentu.
+    { name: 'cta_catalog', buttonParamsJson: JSON.stringify({
+        business_phone_number: '6281234567890'
+    })}
+
+==============================
+TIPS KOMPATIBILITAS
+==============================
+- Gunakan cta_url atau cta_copy di dalam Carousel agar tembus di HP.
+- Hindari quick_reply di dalam Carousel (sering diblokir WA Mobile).
+- Untuk tombol interaktif non-carousel, gunakan interactiveButtons di
+  dalam sock.sendMessage biasa.
+- Gunakan relayMessage untuk mengirim Raw Protobuf.

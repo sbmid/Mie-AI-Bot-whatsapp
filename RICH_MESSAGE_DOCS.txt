@@ -1,0 +1,241 @@
+DOKUMENTASI RICH MESSAGE API
+=============================
+Berdasarkan: plugins/owner/richtest.js
+Command   : .richtest [mode]
+Khusus    : Owner saja
+
+Mode yang tersedia:
+  .richtest          → Menu daftar command
+  .richtest text     → Teks & Markdown (Type 2)
+  .richtest table    → Tabel (Type 4)
+  .richtest code     → Code Block (Type 5)
+  .richtest image    → Inline Image (Type 3)
+  .richtest dynamic  → Dynamic Image (Type 6)
+  .richtest mixed    → Semua digabung dalam 1 pesan
+
+==============================
+IMPORT YANG DIBUTUHKAN
+==============================
+const { tokenizeCode } = require('@whiskeysockets/baileys/lib/Utils/message-composer');
+const { prepareWAMessageMedia } = require('@whiskeysockets/baileys');
+
+==============================
+UPLOAD GAMBAR (WAJIB SEBELUM TYPE 3)
+==============================
+Gambar harus di-upload ke CDN WhatsApp terlebih dahulu.
+Hasilnya adalah directPath (bukan URL biasa).
+
+async function uploadImage(sock, url) {
+    const uploaded = await prepareWAMessageMedia(
+        { image: { url } },
+        { upload: sock.waUploadToServer }
+    );
+    return uploaded.imageMessage.directPath;
+}
+
+// Penggunaan:
+const directPath = await uploadImage(sock, 'https://...');
+
+==============================
+CARA KIRIM RICH MESSAGE
+==============================
+Menggunakan helper sock.sendRichMessage yang sudah ada di bot:
+
+await sock.sendRichMessage(m.chat, [
+    { messageType: 2, messageText: '# Judul' },
+    { messageType: 4, tableMetadata: { ... } },
+    ...
+], m);   // <-- m adalah quoted message (opsional)
+
+==============================
+TIPE-TIPE KONTEN (messageType)
+==============================
+
+─────────────────────────────
+TYPE 2 — Teks & Markdown
+─────────────────────────────
+{ messageType: 2, messageText: 'isi teks' }
+
+Format markdown yang didukung:
+  # Heading 1
+  ## Heading 2
+  ### Heading 3
+  *teks*     → Bold
+  _teks_     → Italic
+  ~teks~     → Coret (Strikethrough)
+  `teks`     → Monospace / Code inline
+  > teks     → Blockquote (bisa multi-baris)
+
+Contoh:
+  { messageType: 2, messageText: '# Bot Mie AI' }
+  { messageType: 2, messageText: 'Teks *bold*, _italic_, ~coret~, dan `mono`.' }
+  { messageType: 2, messageText: '> Blockquote\n> bisa multi baris' }
+
+─────────────────────────────
+TYPE 4 — Tabel
+─────────────────────────────
+{
+    messageType: 4,
+    tableMetadata: {
+        title: 'Judul Tabel',
+        rows: [
+            { items: ['Kolom A', 'Kolom B'], isHeading: true },  // Baris header
+            { items: ['Data 1',  'Data 2'] },                    // Baris biasa
+            { items: ['Data 3',  'Data 4'] }
+        ]
+    }
+}
+
+Catatan:
+  - isHeading: true  → baris tampil tebal/beda warna sebagai header
+  - Bisa lebih dari 2 kolom (contoh: 4 kolom di leaderboard)
+  - Bisa mengirim beberapa tabel dalam 1 pesan
+
+Contoh nyata dari richtest (leaderboard 4 kolom):
+  rows: [
+      { items: ['Rank', 'Nama', 'Score', 'Level'], isHeading: true },
+      { items: ['1', 'Alice', '9.800', 'Lv 50'] },
+      { items: ['2', 'Bob',   '7.500', 'Lv 42'] }
+  ]
+
+─────────────────────────────
+TYPE 5 — Code Block
+─────────────────────────────
+Memerlukan fungsi tokenizeCode untuk tokenisasi syntax highlighting.
+
+{
+    messageType: 5,
+    codeMetadata: {
+        codeLanguage: 'javascript',  // atau 'python', 'typescript'
+        codeBlocks: tokenizeCode(kodeString, 'javascript')
+    }
+}
+
+Bahasa yang didukung: javascript, typescript, python
+
+Contoh:
+  const JS_CODE = `async function hello() {\n  return 'world'\n}`;
+  {
+      messageType: 5,
+      codeMetadata: {
+          codeLanguage: 'javascript',
+          codeBlocks: tokenizeCode(JS_CODE, 'javascript')
+      }
+  }
+
+─────────────────────────────
+TYPE 3 — Inline Image (Upload dulu!)
+─────────────────────────────
+WAJIB upload gambar dulu dengan uploadImage() sebelum dipakai.
+
+const ALIGN = { LEFT: 0, RIGHT: 1, CENTER: 2 };
+// Atau langsung pakai angkanya: 0, 1, atau 2
+
+{
+    messageType: 3,
+    imageMetadata: {
+        imageUrl: {
+            imagePreviewUrl: directPath,  // dari uploadImage()
+            imageHighResUrl: directPath,  // sama
+            sourceUrl:       'https://url-asli.com/gambar.jpg'  // URL asli (PENTING!)
+        },
+        imageText: 'Caption gambar di sini',
+        alignment: 2   // 0=Kiri, 1=Kanan, 2=Tengah
+    }
+}
+
+Alignment (posisi gambar):
+  0 = LEADING  = Kiri
+  1 = TRAILING = Kanan
+  2 = CENTER   = Tengah
+
+PENTING — sourceUrl harus diisi URL asli (bukan directPath).
+Tanpa sourceUrl, gambar sering gagal dimuat.
+
+─────────────────────────────
+TYPE 6 — Dynamic Image / GIF
+─────────────────────────────
+Alternatif untuk menampilkan gambar langsung dari URL (tanpa upload dulu).
+Juga mendukung format GIF dengan looping.
+
+{
+    messageType: 6,
+    dynamicMetadata: {
+        type:    1,                         // 1=IMAGE, 2=GIF
+        url:     'https://...',             // URL langsung (tidak perlu upload)
+        version: 1
+    }
+}
+
+Untuk GIF dengan loop:
+{
+    messageType: 6,
+    dynamicMetadata: {
+        type:      2,   // GIF
+        url:       'https://...',
+        version:   1,
+        loopCount: 0    // 0 = loop selamanya
+    }
+}
+
+Enum type untuk dynamicMetadata:
+  0 = UNKNOWN
+  1 = IMAGE
+  2 = GIF (loopable)
+
+Perbedaan Type 3 vs Type 6:
+  Type 3 → Perlu upload dulu, ada alignment, lebih stabil
+  Type 6 → Langsung dari URL, tidak perlu upload, mendukung GIF
+
+==============================
+CONTOH GABUNGAN (MIXED)
+==============================
+Semua tipe bisa dikombinasikan dalam 1 array:
+
+await sock.sendRichMessage(m.chat, [
+    { messageType: 2, messageText: '# Bot Mie AI' },
+    { messageType: 2, messageText: '## Statistik' },
+    {
+        messageType: 4,
+        tableMetadata: {
+            title: 'Data Live',
+            rows: [
+                { items: ['Metric', 'Value'], isHeading: true },
+                { items: ['Total User',    '1.247'] },
+                { items: ['Pesan Masuk',   '8.934'] }
+            ]
+        }
+    },
+    { messageType: 2, messageText: '## Code Contoh' },
+    {
+        messageType: 5,
+        codeMetadata: {
+            codeLanguage: 'javascript',
+            codeBlocks: tokenizeCode(`const x = 1;`, 'javascript')
+        }
+    },
+    {
+        messageType: 3,
+        imageMetadata: {
+            imageUrl: {
+                imagePreviewUrl: directPath,
+                imageHighResUrl: directPath,
+                sourceUrl: 'https://...'
+            },
+            imageText: 'Banner',
+            alignment: 2
+        }
+    }
+], m);
+
+==============================
+KETERBATASAN
+==============================
+1. Type 3 (Inline Image) dan Type 6 hanya bisa dirender oleh
+   akun AI Meta resmi (JID khusus). Akun WA biasa tidak bisa melihat
+   gambarnya meskipun pesannya terkirim.
+
+2. Akun WA biasa tidak bisa merender Rich Message meskipun bisa mengirim.
+
+3. Solusi untuk bot biasa yang ingin gambar/carousel tembus di HP:
+   Gunakan Carousel Raw Protobuf → lihat: CAROUSEL_BUTTON_DOCS.txt

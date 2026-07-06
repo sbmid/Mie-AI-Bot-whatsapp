@@ -1,0 +1,25 @@
+{
+  "users": {
+    "94300352282641": {
+      "cowoncy": 701,
+      "inventory": {
+        "common": {
+          "🐭 Tikus": 1
+        },
+        "uncommon": {},
+        "rare": {},
+        "epic": {},
+        "mythical": {}
+      },
+      "stats": {
+        "total_hunts": 1,
+        "wins_cf": 0,
+        "loses_cf": 0
+      },
+      "cooldowns": {
+        "hunt": 1781524916177,
+        "daily": 1781524936620
+      }
+    }
+  }
+}
