@@ -12,7 +12,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@hapi/boom": "^10.0.1",
     "@supabase/supabase-js": "^2.101.1",
-    "@whiskeysockets/baileys": "github:innovatorssoft/Baileys",
+    "@whiskeysockets/baileys": "git+https://github.com/innovatorssoft/Baileys.git",
     "axios": "^1.13.5",
     "baileys-mbuilder": "^4.6.0-lts",
     "chalk": "^4.1.2",
