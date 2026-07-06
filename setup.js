@@ -13,6 +13,7 @@ try {
     execSync('git reset --hard origin/main', { stdio: 'inherit' });
 
     console.log("\n[2/2] Menginstal dependencies...");
+    try { execSync('rm -rf node_modules package-lock.json', { stdio: 'ignore' }); } catch (e) {}
     execSync('npm install --ignore-scripts', { stdio: 'inherit' });
 
     console.log("\n=========================================");
