@@ -132,14 +132,31 @@ module.exports = {
             const waktu = moment().tz('Asia/Jakarta').format('HH:mm:ss');
             const botMode = global.botMode || 'Public';
 
-            // Baca video dari local directory
-            const videoBuffer = fs.readFileSync(path.join(process.cwd(), 'menu_video.mp4'));
+            // Baca video dari local directory jika ada
+            const videoPath = path.join(process.cwd(), 'menu_video.mp4');
+            let media = null;
+            let mediaType = 'image';
 
-            // Upload video ke WhatsApp Server dengan opsi gifPlayback (Autoplay tanpa suara)
-            const media = await prepareWAMessageMedia(
-                { video: videoBuffer, gifPlayback: true },
-                { upload: sock.waUploadToServer }
-            );
+            if (fs.existsSync(videoPath)) {
+                const videoBuffer = fs.readFileSync(videoPath);
+                mediaType = 'video';
+                media = await prepareWAMessageMedia(
+                    { video: videoBuffer, gifPlayback: true },
+                    { upload: sock.waUploadToServer }
+                );
+            } else {
+                // Fallback ke foto profil bot atau default image
+                try {
+                    const ppUrl = await sock.profilePictureUrl(sock.user.id, 'image').catch(() => 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/Image/bg.jpg');
+                    media = await prepareWAMessageMedia(
+                        { image: { url: ppUrl } },
+                        { upload: sock.waUploadToServer }
+                    );
+                } catch (e) {
+                    // Jika gagal fetch PP, gunakan gambar kosong/teks aja
+                    media = null;
+                }
+            }
 
             // Fake Reply: Seolah-olah bot membalas siaran/broadcast Meta AI
             const fakeReplyContext = {
@@ -211,8 +228,9 @@ module.exports = {
                             header: proto.Message.InteractiveMessage.Header.create({
                                 title: `@${senderNumber}`, // tag nomor pengirim
                                 subtitle: "Mie AI Bot",
-                                hasMediaAttachment: true,
-                                videoMessage: media.videoMessage
+                                hasMediaAttachment: !!media,
+                                ...(mediaType === 'video' && media ? { videoMessage: media.videoMessage } : {}),
+                                ...(mediaType === 'image' && media ? { imageMessage: media.imageMessage } : {})
                             }),
                             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                 messageParamsJson: JSON.stringify({
