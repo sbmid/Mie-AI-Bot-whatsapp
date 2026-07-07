@@ -1,60 +1,232 @@
 const { createCanvas, loadImage, GlobalFonts } = require('@napi-rs/canvas');
-const axios = require('axios');
-const fs = require('fs');
 const { writeFile, mkdir } = require('fs/promises');
-const path = require('path');
+const { existsSync } = require('fs');
+const { join } = require('path');
+const https = require('https');
+const http = require('http');
 
-const ASSETS_DIR = path.join(process.cwd(), 'assets', 'ttqc');
-const OUT_DIR = path.join(process.cwd(), 'temp');
+const ASSETS_DIR    = join(process.cwd(), 'assets', 'ttqc2');
+const FONTS_DIR     = join(ASSETS_DIR, 'fonts');
+const TEMPLATE_PATH = join(ASSETS_DIR, 'template.png');
+const TEMPLATE_URL  = 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/ttqc/qyzwa.png';
 
-async function download(url) {
-    const res = await axios.get(url, { responseType: 'arraybuffer' });
-    return Buffer.from(res.data);
+const FONT_ASSETS = [
+  { name: 'PlusJakartaSans-Regular', file: 'PlusJakartaSans-Regular.ttf', url: 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/ttqc/PlusJakartaSans-Regular.ttf', family: 'Plus Jakarta Sans' },
+  { name: 'PlusJakartaSans-Medium',  file: 'PlusJakartaSans-Medium.ttf',  url: 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/ttqc/PlusJakartaSans-Medium.ttf',  family: 'Plus Jakarta Sans' },
+  { name: 'PlusJakartaSans-Bold',    file: 'PlusJakartaSans-Bold.ttf',    url: 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/ttqc/PlusJakartaSans-Bold.ttf',    family: 'Plus Jakarta Sans' },
+  { name: 'FontAwesome-Solid',       file: 'fa-solid-900.ttf',            url: 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/ttqc/fa-solid-900.ttf',            family: 'Font Awesome 6 Free' },
+  { name: 'NotoColorEmoji',          file: 'NotoColorEmoji.ttf',          url: 'https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf',          family: 'Noto Color Emoji' },
+];
+
+const MENU_ICONS = [
+  { unicode: '\uf3e5', text: 'Balas',           color: '#000000' },
+  { unicode: '\uf064', text: 'Teruskan',         color: '#000000' },
+  { unicode: '\uf0c5', text: 'Salin',            color: '#000000' },
+  { unicode: '\uf1ab', text: 'Terjemahkan',      color: '#000000' },
+  { unicode: '\uf2ed', text: 'Hapus untuk saya', color: '#000000' },
+  { unicode: '\uf024', text: 'Laporkan',         color: '#ea4335' },
+];
+
+const config = {
+  topPPX: 183, topPPY: 83, topPPRadius: 42,
+  topNameX: 250, topNameY: 82, topNameSize: 34,
+  chatPPX: 75, chatPPRadius: 38,
+  textX: 175, textY: 962,
+  bubbleWidth: 520, textSize: 30,
+  bubbleBgColor: '#ffffff', textColor: '#161823',
+};
+
+function fetchBuffer(url) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    client.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) {
+        return fetchBuffer(res.headers.location).then(resolve).catch(reject);
+      }
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode} → ${url}`));
+      const chunks = [];
+      res.on('data', c => chunks.push(c));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
 }
 
-async function setup() {
-    await mkdir(ASSETS_DIR, { recursive: true });
-    await mkdir(OUT_DIR, { recursive: true });
-    
-    const fontUrl = 'https://github.com/rsms/inter/raw/refs/heads/master/docs/font-files/Inter-Medium.woff2';
-    const fontLocal = path.join(ASSETS_DIR, 'Inter-Medium.woff2');
-    
-    if (!fs.existsSync(fontLocal)) {
-        await writeFile(fontLocal, await download(fontUrl));
+async function ensureAssets() {
+  await mkdir(FONTS_DIR, { recursive: true });
+
+  if (!existsSync(TEMPLATE_PATH)) {
+    await writeFile(TEMPLATE_PATH, await fetchBuffer(TEMPLATE_URL));
+  }
+
+  for (const font of FONT_ASSETS) {
+    const dest = join(FONTS_DIR, font.file);
+    if (!existsSync(dest)) {
+      await writeFile(dest, await fetchBuffer(font.url));
     }
-    GlobalFonts.registerFromPath(fontLocal, 'InterTT');
+    GlobalFonts.registerFromPath(dest, font.family);
+  }
+}
+
+async function loadImageSmart(src) {
+  if (typeof src === 'string' && (src.startsWith('http://') || src.startsWith('https://'))) {
+    return loadImage(await fetchBuffer(src));
+  }
+  return loadImage(src);
 }
 
 function wrapText(ctx, text, maxWidth) {
-    const words = text.split(' ');
-    let lines = [];
-    let currentLine = words[0];
+  const words = text.split(/(\s+)/);
+  const lines = [];
+  let currentLine = '';
 
-    for (let i = 1; i < words.length; i++) {
-        const word = words[i];
-        const width = ctx.measureText(currentLine + " " + word).width;
-        if (width < maxWidth) {
-            currentLine += " " + word;
-        } else {
-            lines.push(currentLine);
-            currentLine = word;
-        }
+  for (const word of words) {
+    if (!word) continue;
+    if (word.trim() === '' && currentLine === '') continue;
+
+    const testLine = currentLine + word;
+    if (ctx.measureText(testLine).width > maxWidth) {
+      if (currentLine !== '') {
+        lines.push(currentLine.trimEnd());
+        currentLine = word.trimStart();
+      } else {
+        lines.push(testLine);
+        currentLine = '';
+      }
+    } else {
+      currentLine = testLine;
     }
-    lines.push(currentLine);
-    return lines;
+  }
+  if (currentLine.trim()) {
+    lines.push(currentLine.trimEnd());
+  }
+  return lines;
+}
+
+function drawRoundedRect(ctx, x, y, w, h, r, fill, stroke = null, shadow = false) {
+  ctx.save();
+  if (shadow) {
+    ctx.shadowColor = 'rgba(0,0,0,0.05)';
+    ctx.shadowBlur = 40;
+    ctx.shadowOffsetY = 12;
+  }
+  ctx.fillStyle = fill;
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+  ctx.fill();
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1; ctx.stroke(); }
+  ctx.restore();
+}
+
+function drawCircleImage(ctx, img, cx, cy, r) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.closePath();
+  ctx.clip();
+  ctx.drawImage(img, cx - r, cy - r, r * 2, r * 2);
+  ctx.restore();
+}
+
+async function render(username, chatText, avatarSrc) {
+  await ensureAssets();
+
+  const USERNAME   = username  ?? 'Anonymous';
+  const CHAT_TEXT  = chatText  ?? 'Just friend kok cemburu 😂😂';
+  const AVATAR_SRC = avatarSrc ?? 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/6b71d84a580f385bd7ee36402df5341ead4770a0/Image/artworks-gWLRE6HyPH3DgVMG-ZFFxtg-t500x500.jpg';
+
+  const templateImage = await loadImage(TEMPLATE_PATH);
+  const avatarImage   = await loadImageSmart(AVATAR_SRC);
+
+  const canvas = createCanvas(1080 * 2, 2280 * 2);
+  const ctx    = canvas.getContext('2d');
+
+  ctx.scale(2, 2);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+
+  ctx.clearRect(0, 0, 1080, 2280);
+  ctx.drawImage(templateImage, 0, 0, 1080, 2280);
+
+  drawCircleImage(ctx, avatarImage, config.topPPX, config.topPPY, config.topPPRadius);
+
+  ctx.font = \`bold \${config.topNameSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'\`;
+  ctx.fillStyle = '#000000';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(USERNAME, config.topNameX, config.topNameY);
+
+  ctx.font = \`500 \${config.textSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'\`;
+  
+  const lines = wrapText(ctx, CHAT_TEXT, config.bubbleWidth - 52);
+  const lineH = config.textSize * 1.45;
+
+  let maxW = 0;
+  for (const l of lines) {
+    const w = ctx.measureText(l).width;
+    if (w > maxW) maxW = w;
+  }
+
+  const padX = 30, padY = 24;
+  const bubbleW = Math.max(maxW + padX * 2, 180);
+  const bubbleH = lines.length * lineH + padY * 2;
+  const bubbleX = config.textX - padX;
+  const bubbleY = config.textY - padY;
+
+  drawCircleImage(ctx, avatarImage, config.chatPPX, bubbleY + bubbleH / 2, config.chatPPRadius);
+  drawRoundedRect(ctx, bubbleX, bubbleY, bubbleW, bubbleH, 35, config.bubbleBgColor);
+
+  ctx.fillStyle = config.textColor;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+
+  lines.forEach((line, i) => {
+    const lineY = config.textY + i * lineH + config.textSize / 2;
+    ctx.fillText(line, config.textX, lineY);
+  });
+
+  const menuX = 90, menuY = bubbleY + bubbleH + 28;
+  drawRoundedRect(ctx, menuX, menuY, 565, 580, 40, '#ffffff', 'rgba(0,0,0,0.02)', true);
+
+  const itemH = 90, iconX = menuX + 60, labelX = menuX + 130;
+  MENU_ICONS.forEach((item, i) => {
+    const cy = menuY + 25 + i * itemH + itemH / 2;
+    ctx.fillStyle = item.color;
+    ctx.font = \`900 34px 'Font Awesome 6 Free'\`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(item.unicode, iconX, cy);
+    ctx.font = \`500 34px 'Plus Jakarta Sans'\`;
+    ctx.textAlign = 'left';
+    ctx.fillText(item.text, labelX, cy);
+  });
+
+  ctx.restore();
+
+  const outPath = join(process.cwd(), 'temp', \`ttqc-\${Date.now()}.png\`);
+  await mkdir(join(process.cwd(), 'temp'), { recursive: true });
+  await writeFile(outPath, await canvas.encode('png'));
+  return outPath;
 }
 
 module.exports = {
     command: ['ttqc'],
     handler: async (sock, m, { text, prefix, command }) => {
         const from = m.chat;
-        if (!text) return sock.sendMessage(from, { text: `[!] Mana teksnya?\nContoh: *${prefix}${command} Kata-kata hari ini*` }, { quoted: m });
+        if (!text) return sock.sendMessage(from, { text: \`[!] Mana teksnya?\nContoh: *\${prefix}\${command} Kata-kata hari ini*\` }, { quoted: m });
 
         if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '⏳', key: m.key } });
 
         try {
-            await setup();
-            
             const sender = m.sender;
             const username = m.pushName || "Anonymous";
             let ppUrl = 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/Image/artworks-gWLRE6HyPH3DgVMG-ZFFxtg-t500x500.jpg';
@@ -63,97 +235,18 @@ module.exports = {
                 ppUrl = await sock.profilePictureUrl(sender, 'image');
             } catch (e) {}
 
-            const avatarImg = await loadImage(ppUrl);
-
-            // Canvas sizes
-            const canvasW = 800;
-            const padding = 30;
-            const avatarSize = 80;
-            const textStartX = padding + avatarSize + 20;
-            const textMaxWidth = canvasW - textStartX - 100; // Leave space for heart icon
-
-            const tempCanvas = createCanvas(canvasW, 1000);
-            const tCtx = tempCanvas.getContext('2d');
-            tCtx.font = '30px InterTT';
-            const wrappedText = wrapText(tCtx, text, textMaxWidth);
-            
-            const lineHeight = 38;
-            const textHeight = wrappedText.length * lineHeight;
-            
-            const canvasH = padding * 2 + 60 + textHeight + 40; // 60 for name, 40 for footer
-
-            const canvas = createCanvas(canvasW, canvasH);
-            const ctx = canvas.getContext('2d');
-
-            // Draw Background (TikTok Dark Modal)
-            ctx.fillStyle = '#111111';
-            ctx.fillRect(0, 0, canvasW, canvasH);
-
-            // Draw Avatar
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(padding + (avatarSize/2), padding + (avatarSize/2), avatarSize/2, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.clip();
-            ctx.drawImage(avatarImg, padding, padding, avatarSize, avatarSize);
-            ctx.restore();
-
-            // Draw Username
-            ctx.font = 'bold 24px InterTT';
-            ctx.fillStyle = '#8A8B91';
-            ctx.fillText(username, textStartX, padding + 25);
-
-            let currentX = textStartX + ctx.measureText(username).width + 10;
-
-            // Draw "Creator" Badge if user is owner
-            if (global.ownerNumber && global.ownerNumber.includes(sender)) {
-                ctx.fillStyle = '#FE2C55'; // Tiktok Red
-                ctx.beginPath();
-                ctx.roundRect(currentX, padding + 5, 75, 26, 4);
-                ctx.fill();
-                ctx.font = 'bold 14px InterTT';
-                ctx.fillStyle = '#ffffff';
-                ctx.fillText("Creator", currentX + 12, padding + 23);
-                currentX += 85;
-            }
-
-            // Draw Text
-            ctx.font = '30px InterTT';
-            ctx.fillStyle = '#FFFFFF';
-            let startY = padding + 65;
-            for (let line of wrappedText) {
-                ctx.fillText(line, textStartX, startY);
-                startY += lineHeight;
-            }
-
-            // Footer (Time & Reply)
-            ctx.font = '20px InterTT';
-            ctx.fillStyle = '#8A8B91';
-            ctx.fillText("1h ago", textStartX, startY + 15);
-            ctx.font = 'bold 20px InterTT';
-            ctx.fillText("Reply", textStartX + 80, startY + 15);
-
-            // Draw Heart Icon (Right side)
-            ctx.font = '30px InterTT';
-            ctx.fillStyle = '#8A8B91';
-            const heartX = canvasW - 70;
-            ctx.fillText("♡", heartX, padding + 40);
-            ctx.font = '18px InterTT';
-            ctx.textAlign = 'center';
-            ctx.fillText(Math.floor(Math.random() * 500) + 10, heartX + 15, padding + 70);
-
-            const outPath = path.join(OUT_DIR, `ttqc-${Date.now()}.png`);
-            await writeFile(outPath, await canvas.encode('png'));
-
+            const outPath = await render(username, text, ppUrl);
             await sock.sendMessage(from, { image: { url: outPath }, caption: "Done!" }, { quoted: m });
-            fs.unlinkSync(outPath); // cleanup
+            
+            const fs = require('fs');
+            fs.unlinkSync(outPath);
             
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '✅', key: m.key } });
 
         } catch (e) {
             console.error('TTQC Error:', e);
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '❌', key: m.key } });
-            sock.sendMessage(from, { text: `[!] Terjadi kesalahan: ${e.message}` }, { quoted: m });
+            sock.sendMessage(from, { text: \`[!] Terjadi kesalahan: \${e.message}\` }, { quoted: m });
         }
     }
 };
