@@ -14,7 +14,7 @@ const menuData = {
             { name: "Group Manager", cmds: ["acc", "add", "afk", "antilinkall", "ceksewa", "sewacek", "close", "delres", "demote", "gcoff", "gcmute", "gcon", "group", "gstatus", "gs", "groupstatus", "hidetag", "kick", "leave", "linkgc", "listres", "open", "promote", "revoke", "addres", "setres", "setdesk", "setnamegc", "timergc", "totag", "welcome"] },
             { name: "Info & Islami", cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news"] },
             { name: "Maker & Sticker", cmds: ["attp", "brat", "sbrat", "bratvid", "bratgif", "smeme", "s", "stiker", "sticker", "wm", "watermark", "colong", "ephoto360", "photooxy", "textpro"] },
-            { name: "Canvas & Image", cmds: ["igstory", "iqc", "iqcdark", "ttqc"] },
+            { name: "Canvas & Image", cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen"] },
             { name: "Tools Tambahan", cmds: ["cekidgc", "cekspek", "cekmeta", "mediainfo", "spek", "getidch", "hd", "delhd", "remini", "upscale", "noiseremover", "clearaudio", "purestatus", "puresw", "pureimg", "purevid", "hapus", "delete", "delpure", "hapuspure", "removebg", "removbg", "rbg", "nobg", "resend", "kirimulang", "teruskan", "rvo", "readviewonce", "toaudio", "tomp3", "toimage", "toimg", "tourl", "up", "upch", "postch", "tovn", "vn", "call", "endcall", "leaderboard", "lb", "top", "topglobal", "me", "profile", "profil", "rank", "level", "lapor", "request", "cekfeedback", "donelapor", "donerequest", "volume", "volvideo", "volumevideo"] },
             { name: "Khusus Owner", cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall"] },
             { name: "Main Menu", cmds: ["aku", "menu", "help", "p", "list", "owner", "ping", "runtime", "sewa"] }
@@ -50,7 +50,7 @@ const menuData = {
     },
     canvas: {
         title: "Canvas & Image",
-        cmds: ["igstory", "iqc", "iqcdark", "ttqc"]
+        cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen"]
     },
     tools: {
         title: "Tools Tambahan",
