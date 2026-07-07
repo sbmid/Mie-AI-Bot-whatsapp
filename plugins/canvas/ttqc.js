@@ -159,13 +159,13 @@ async function render(username, chatText, avatarSrc) {
 
   drawCircleImage(ctx, avatarImage, config.topPPX, config.topPPY, config.topPPRadius);
 
-  ctx.font = \`bold \${config.topNameSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'\`;
+  ctx.font = `bold ${config.topNameSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'`;
   ctx.fillStyle = '#000000';
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
   ctx.fillText(USERNAME, config.topNameX, config.topNameY);
 
-  ctx.font = \`500 \${config.textSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'\`;
+  ctx.font = `500 ${config.textSize}px 'Plus Jakarta Sans', 'Noto Color Emoji'`;
   
   const lines = wrapText(ctx, CHAT_TEXT, config.bubbleWidth - 52);
   const lineH = config.textSize * 1.45;
@@ -201,18 +201,18 @@ async function render(username, chatText, avatarSrc) {
   MENU_ICONS.forEach((item, i) => {
     const cy = menuY + 25 + i * itemH + itemH / 2;
     ctx.fillStyle = item.color;
-    ctx.font = \`900 34px 'Font Awesome 6 Free'\`;
+    ctx.font = `900 34px 'Font Awesome 6 Free'`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(item.unicode, iconX, cy);
-    ctx.font = \`500 34px 'Plus Jakarta Sans'\`;
+    ctx.font = `500 34px 'Plus Jakarta Sans'`;
     ctx.textAlign = 'left';
     ctx.fillText(item.text, labelX, cy);
   });
 
   ctx.restore();
 
-  const outPath = join(process.cwd(), 'temp', \`ttqc-\${Date.now()}.png\`);
+  const outPath = join(process.cwd(), 'temp', `ttqc-${Date.now()}.png`);
   await mkdir(join(process.cwd(), 'temp'), { recursive: true });
   await writeFile(outPath, await canvas.encode('png'));
   return outPath;
@@ -222,7 +222,7 @@ module.exports = {
     command: ['ttqc'],
     handler: async (sock, m, { text, prefix, command }) => {
         const from = m.chat;
-        if (!text) return sock.sendMessage(from, { text: \`[!] Mana teksnya?\nContoh: *\${prefix}\${command} Kata-kata hari ini*\` }, { quoted: m });
+        if (!text) return sock.sendMessage(from, { text: `[!] Mana teksnya?\nContoh: *${prefix}${command} Kata-kata hari ini*` }, { quoted: m });
 
         if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '⏳', key: m.key } });
 
