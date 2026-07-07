@@ -7,8 +7,9 @@ console.log("=========================================\n");
 try {
     // Force clone ke folder saat ini (meskipun nggak kosong)
     console.log("[1/2] Mengambil file dari Github...");
-    execSync('git init', { stdio: 'inherit' });
-    execSync('git remote add origin https://github.com/sbmid/Mie-AI-Bot-whatsapp.git', { stdio: 'inherit' });
+    try { execSync('git init', { stdio: 'ignore' }); } catch (e) {}
+    try { execSync('git remote add origin https://github.com/sbmid/Mie-AI-Bot-whatsapp.git', { stdio: 'ignore' }); } catch (e) {}
+    try { execSync('git remote set-url origin https://github.com/sbmid/Mie-AI-Bot-whatsapp.git', { stdio: 'ignore' }); } catch (e) {}
     execSync('git fetch', { stdio: 'inherit' });
     execSync('git reset --hard origin/main', { stdio: 'inherit' });
 
