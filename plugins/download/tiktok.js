@@ -1,11 +1,69 @@
 const axios = require('axios');
+const cheerio = require('cheerio');
 const { sendMediaSafe } = require('../../lib/helper');
 
 /**
- * MIE AI - TikTok Downloader V3.6 
- * Fitur: Support Video HD & Slide Foto 
- * Fix: sendMediaSafe untuk file besar, timeout API 25s
+ * Native SSSTik Scraper by Azrial Galih Prasetyo (AL)
+ * Bebas API Key, langsung scrape dari sumbernya.
  */
+async function scrapeSsstik(url) {
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    };
+
+    const { data } = await axios.get('https://ssstik.io/id', { headers });
+    const $ = cheerio.load(data);
+    const hxPost = $('form').attr('hx-post') || $('form').attr('action');
+    const tt = $('input[name="tt"]').val() || '';
+
+    const formData = new URLSearchParams();
+    formData.append('id', url);
+    formData.append('locale', 'id');
+    formData.append('tt', tt);
+
+    const postData = await axios.post(`https://ssstik.io${hxPost}`, formData.toString(), {
+        headers: {
+            ...headers,
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Hx-Request': 'true',
+            'Hx-Target': 'target',
+            'Hx-Current-Url': 'https://ssstik.io/id',
+            'Origin': 'https://ssstik.io',
+            'Referer': 'https://ssstik.io/id'
+        }
+    });
+
+    const $result = cheerio.load(postData.data);
+    
+    // Cek error dari ssstik (misal video dihapus/private)
+    if ($result('.alert-danger').length > 0) {
+        throw new Error($result('.alert-danger').text().trim());
+    }
+
+    const videoNoWatermark = $result('a.without_watermark').attr('href');
+    const mp3 = $result('a.download_audio').attr('href');
+    const desc = $result('.maintext').text().trim();
+    
+    // Scrape slide foto (SSSTik menaruhnya dalam tag <img> di class slide)
+    const slideImages = [];
+    $result('img').each((i, el) => {
+        const src = $result(el).attr('src');
+        if (src && src.includes('tiktokcdn')) {
+            slideImages.push(src);
+        }
+    });
+
+    // Validasi ulang gambar slide (SSSTik struktur bisa berubah)
+    const validSlides = slideImages.length > 0 ? slideImages : null;
+
+    return {
+        video: videoNoWatermark || null,
+        images: validSlides,
+        audio: mp3 || null,
+        desc: desc || ''
+    };
+}
+
 module.exports = {
     command: ['tt', 'tiktok', 'ttdl'],
     handler: async (sock, m, { args, prefix, command }) => {
@@ -21,89 +79,42 @@ module.exports = {
         try {
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '⏳', key: m.key } });
 
-            let isSlide = false;
-            let slideImages = [];
-            let videoUrl = '';
-            let desc = '';
+            const data = await scrapeSsstik(url);
             
-            // Menggunakan Endpoint Tunggal AlyaChan sesuai instruksi
-            const apiUrl = `https://api.alyachan.dev/api/downloader/tiktok?url=${encodeURIComponent(url)}&apikey=alyachan`;
-            const response = await axios.get(apiUrl, { timeout: 25000 }).catch(e => e.response);
-            
-            if (response && response.data && response.data.status) {
-                const data = response.data.data;
-                desc = data.title || data.desc || '';
-                
-                // Pengecekan apakah hasil berupa slide gambar atau video
-                if (data.images && data.images.length > 0) {
-                    isSlide = true;
-                    slideImages = data.images;
-                } else if (data.video_no_watermark || data.video) {
-                    videoUrl = data.video_no_watermark || data.video;
-                }
-            } else {
-                throw new Error("Gagal mendapatkan data TikTok dari AlyaChan.");
+            if (!data.video && !data.images) {
+                throw new Error("Gagal mengambil media. Pastikan link valid dan tidak privat.");
             }
 
-            if (!isSlide && !videoUrl) throw new Error("Link media gagal didapatkan.");
-
-            // Header Caption Estetik 
             const caption = `
 ━ ⟨ *TIKTOK DOWNLOADER* ⟩ ━
 
-> » *Deskripsi*: ${desc || 'Tanpa Keterangan'}
+> » *Deskripsi*: ${data.desc || 'Tanpa Keterangan'}
 `.trim();
 
-            if (isSlide && slideImages.length > 0) {
-                await sock.sendMessage(from, { text: `[i] *TikTok Slide Terdeteksi!*\nMengurutkan ${slideImages.length} foto untuk dikirim...` }, { quoted: m });
+            if (data.images && data.images.length > 0 && !data.video) {
+                await sock.sendMessage(from, { text: `[i] *TikTok Slide Terdeteksi!*\nMengurutkan ${data.images.length} foto untuk dikirim...` }, { quoted: m });
                 
-                for (let i = 0; i < slideImages.length; i++) {
-                    try {
-                        let imgBuffer = null;
-                        try {
-                            const getImg = await axios({
-                                method: 'get',
-                                url: slideImages[i],
-                                responseType: 'arraybuffer',
-                                timeout: 20000
-                            });
-                            imgBuffer = Buffer.from(getImg.data);
-                        } catch (dlErr) {
-                            console.warn('Gagal download gambar slide, pakai URL langsung:', dlErr.message);
-                        }
-
-                        await sendMediaSafe(sock, from, imgBuffer, slideImages[i], 'image',
-                            i === 0 ? caption : '', m);
-                    } catch (err) {
-                        console.error('Gagal kirim slide gambar ke-' + i, err.message);
-                    }
+                for (let i = 0; i < data.images.length; i++) {
+                    await sendMediaSafe(sock, from, null, data.images[i], 'image', i === 0 ? caption : '', m);
                     await new Promise(r => setTimeout(r, 1500));
                 }
-            } else {
-                let videoBuffer = null;
-                try {
-                    const getVid = await axios({
-                        method: 'get',
-                        url: videoUrl,
-                        responseType: 'arraybuffer',
-                        timeout: 90000
-                    });
-                    videoBuffer = Buffer.from(getVid.data);
-                } catch (dlErr) {
-                    console.warn('[TikTok] Download buffer gagal, akan pakai URL langsung:', dlErr.message);
-                }
+            } else if (data.video) {
+                await sendMediaSafe(sock, from, null, data.video, 'video', caption, m);
+            }
 
-                await sendMediaSafe(sock, from, videoBuffer, videoUrl, 'video', caption, m);
+            // Kirim audio jika ada
+            if (data.audio) {
+                await sendMediaSafe(sock, from, null, data.audio, 'audio', '', m);
             }
 
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '✅', key: m.key } });
 
         } catch (e) {
-            console.error("Error TT DL Mie AI:", e.message);
+            console.error("Error Native TT DL:", e.message);
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '❌', key: m.key } });
 
             sock.sendMessage(from, {
-                text: ` *Duh Maaf Kak...* \nMie gagal memproses link ini. Server error atau salah link. `
+                text: ` *Duh Maaf Kak...* \nGagal scrape SSSTik: ${e.message}`
             }, { quoted: m });
         }
     }
