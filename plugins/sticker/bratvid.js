@@ -47,7 +47,7 @@ module.exports = {
             console.error("Error BratVid SBM:", e.message);
             
             sock.sendMessage(from, { 
-                text: ` *Aduh Bos Azrial...* \nSepertinya "kompor" API-nya lagi mati atau kegedean teksnya. Coba lagi ya! ` 
+                text: ` *Aduh Kak...* \nSepertinya "kompor" API-nya lagi mati atau kegedean teksnya. Coba lagi ya! ` 
             }, { quoted: m });
         }
     }
