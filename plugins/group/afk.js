@@ -3,18 +3,17 @@ const db = require('../../lib/database');
 module.exports = {
     command: ['afk'],
     handler: async (sock, m, { text }) => {
-        const data = db.read();
-        const user = data.users[m.sender] || { afkTime: -1, afkReason: '' };
+        // Gunakan getUser agar data base (jid, level, dll) tidak hilang/undefined
+        const user = global.db.getUser(m.sender);
 
         user.afkTime = +new Date();
         user.afkReason = text || 'Tanpa Alasan';
         
-        data.users[m.sender] = user;
         if(global.db && global.db.saveAll) global.db.saveAll();
 
         let startMsg = `╭───  「 *AFK MODE ON* 」  ───╮\n│\n`;
         startMsg += `│ [!] *User:* @${m.sender.split('@')[0]}\n`;
-        startMsg += `│ [!] *Mulai:* ${new Date().toLocaleTimeString()}\n`;
+        startMsg += `│ [!] *Mulai:* ${new Date().toLocaleTimeString('id-ID')}\n`;
         startMsg += `│ [!] *Alasan:* ${user.afkReason}\n`;
         startMsg += `│\n`;
         startMsg += `╰──────────────────╯\n`;
