@@ -22,13 +22,22 @@ module.exports = {
         }
 
         // ── 2. Cek apakah pengirim adalah admin grup ───────────────
-        const groupMeta = await sock.groupMetadata(from);
-        const isAdmin = groupMeta.participants.some(
-            p => (p.id === m.sender || p.jid === m.sender || p.lid === m.sender)
-                && (p.admin === 'admin' || p.admin === 'superadmin')
-        );
+        let isAdmin = false;
+        if (isOwner) {
+            isAdmin = true;
+        } else {
+            try {
+                const groupMeta = await sock.groupMetadata(from);
+                isAdmin = groupMeta.participants.some(
+                    p => (p.id === m.sender || p.jid === m.sender || p.lid === m.sender)
+                        && (p.admin === 'admin' || p.admin === 'superadmin')
+                );
+            } catch (e) {
+                return sock.sendMessage(from, { text: '❌ Gagal mengecek status admin (Rate limit/Koneksi).' }, { quoted: m });
+            }
+        }
 
-        if (!isAdmin && !isOwner) {
+        if (!isAdmin) {
             return sock.sendMessage(from, {
                 text: '❌ Hanya *Admin Grup* yang bisa menggunakan perintah ini!'
             }, { quoted: m });
@@ -134,6 +143,9 @@ module.exports = {
             }
 
             // ── 5. Kirim sebagai Status Grup ──────────────────────
+            // Jeda 2 detik agar tidak rate-limited (429) oleh WhatsApp saat sendMessage memanggil groupMetadata internal
+            if (!isOwner) await new Promise(resolve => setTimeout(resolve, 2000));
+            
             await sock.sendMessage(from, statusPayload);
 
             // Reaksi sukses
