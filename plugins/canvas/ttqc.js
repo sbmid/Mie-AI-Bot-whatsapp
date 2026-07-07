@@ -246,7 +246,7 @@ module.exports = {
         } catch (e) {
             console.error('TTQC Error:', e);
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '❌', key: m.key } });
-            sock.sendMessage(from, { text: \`[!] Terjadi kesalahan: \${e.message}\` }, { quoted: m });
+            await sock.sendMessage(from, { text: `[!] Terjadi kesalahan: ${e.message}` }, { quoted: m });
         }
     }
 };

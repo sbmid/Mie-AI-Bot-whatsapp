@@ -191,7 +191,7 @@ async function generateBrat({ text = 'Halo Guys Nama Saya', theme = 'white', blu
 }
 
 module.exports = {
-  command: ['brat2'],
+  command: ['brat'],
   handler: async (sock, m, { text, prefix, command }) => {
     if (!text) return sock.sendMessage(m.chat, { text: `Contoh penggunaan:\n${prefix}${command} Teks kamu\n\nUntuk mengubah tema (white/black/green):\n${prefix}${command} Teks kamu | theme:black` }, { quoted: m });
     

@@ -293,7 +293,7 @@ async function generateBratVideo({
 }
 
 module.exports = {
-  command: ['bratvid2', 'bratgif2'],
+  command: ['bratvid', 'bratgif'],
   handler: async (sock, m, { text, prefix, command }) => {
     if (!text) return sock.sendMessage(m.chat, { text: `Contoh penggunaan:\n${prefix}${command} Teks kamu\n\nBisa juga custom tema:\n${prefix}${command} Teks kamu | theme:black` }, { quoted: m });
     
