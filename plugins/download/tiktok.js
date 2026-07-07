@@ -115,7 +115,7 @@ module.exports = {
             console.error("Error TT DL:", e.message);
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '❌', key: m.key } });
 
-            sock.sendMessage(from, {
+            await sock.sendMessage(from, {
                 text: ` *Duh Maaf Kak...* \nGagal download TikTok: ${e.message}`
             }, { quoted: m });
         }
