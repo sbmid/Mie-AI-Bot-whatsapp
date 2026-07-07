@@ -20,6 +20,9 @@ module.exports = {
         try {
             if (global.waitMode === "react") await sock.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
 
+            // Hapus index.lock jika ada (self-healing git crash)
+            try { execSync('rm -f .git/index.lock'); } catch (e) {}
+
             // Menggunakan git fetch dan git reset, ini secara otomatis membuat bot 
             // 100% identik dengan repo github, menghapus modifikasi lokal, dan menghapus file yang dihapus di repo.
             let stdout = execSync('git fetch origin && git reset --hard origin/main').toString();
