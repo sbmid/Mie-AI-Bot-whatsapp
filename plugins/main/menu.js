@@ -7,14 +7,14 @@ const menuData = {
     all: {
         title: "All Menu - Mie AI",
         categories: [
-            { name: "AI & Desain", cmds: ["ai", "meta", "chatgpt", "gpt", "autoai", "edit", "recolor", "toanime", "iqc", "ainsfw", "nsfwai", "aiimage18"] },
+            { name: "AI & Desain", cmds: ["ai", "meta", "chatgpt", "gpt", "autoai", "edit", "recolor", "toanime", "ainsfw", "nsfwai", "aiimage18"] },
             { name: "Media & Search", cmds: ["ig", "igdl", "tt", "tiktok", "x", "twitter", "ytdl", "ytmp3", "ytmp4", "ytv", "yta", "github", "pin", "pinterest", "pinsearch", "pinterestsearch", "play", "bokepdl", "xvdl", "xnxxdl"] },
             { name: "Hiburan & Game", cmds: ["asahotak", "caklontong", "cerdascermat", "family100", "lengkapikalimat", "maths", "siapakahaku", "slot", "judi", "tebakff", "tebakgambar", "tebakgame", "tebakkartun", "tebakkata", "tebaklagu", "tebaklirik", "tebakwarna"] },
             { name: "RPG & Spaceman", cmds: ["rpgstart", "rpgstats", "rpgexplore", "rpginv", "rpgshop", "rpghelp", "attack", "skill", "ulti", "flee", "buy", "sell", "use", "equip", "unequip", "craft", "quest", "daily", "pvp", "dungeon", "spaceman", "changeclass", "upgrade", "leaderboardrpg", "adopsipet", "dungeon", "bank", "setor", "tarik", "topbank", "topkaya", "market", "ceksaham", "portofolio", "crypto"] },
             { name: "Group Manager", cmds: ["acc", "add", "afk", "antilinkall", "ceksewa", "sewacek", "close", "delres", "demote", "gcoff", "gcmute", "gcon", "group", "gstatus", "gs", "groupstatus", "hidetag", "kick", "leave", "linkgc", "listres", "open", "promote", "revoke", "addres", "setres", "setdesk", "setnamegc", "timergc", "totag", "welcome"] },
             { name: "Info & Islami", cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news"] },
             { name: "Maker & Sticker", cmds: ["attp", "brat", "sbrat", "bratvid", "bratgif", "smeme", "s", "stiker", "sticker", "wm", "watermark", "colong", "ephoto360", "photooxy", "textpro"] },
-            { name: "Canvas & Image", cmds: ["igstory", "iqcdark", "ttqc"] },
+            { name: "Canvas & Image", cmds: ["igstory", "iqc", "iqcdark", "ttqc"] },
             { name: "Tools Tambahan", cmds: ["cekidgc", "cekspek", "cekmeta", "mediainfo", "spek", "getidch", "hd", "delhd", "remini", "upscale", "noiseremover", "clearaudio", "purestatus", "puresw", "pureimg", "purevid", "hapus", "delete", "delpure", "hapuspure", "removebg", "removbg", "rbg", "nobg", "resend", "kirimulang", "teruskan", "rvo", "readviewonce", "toaudio", "tomp3", "toimage", "toimg", "tourl", "up", "upch", "postch", "tovn", "vn", "call", "endcall", "leaderboard", "lb", "top", "topglobal", "me", "profile", "profil", "rank", "level", "lapor", "request", "cekfeedback", "donelapor", "donerequest", "volume", "volvideo", "volumevideo"] },
             { name: "Khusus Owner", cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall"] },
             { name: "Main Menu", cmds: ["aku", "menu", "help", "p", "list", "owner", "ping", "runtime", "sewa"] }
@@ -22,7 +22,7 @@ const menuData = {
     },
     ai: {
         title: "AI & Desain",
-        cmds: ["ai", "meta", "chatgpt", "gpt", "autoai", "edit", "recolor", "toanime", "iqc", "ainsfw", "nsfwai", "aiimage18"]
+        cmds: ["ai", "meta", "chatgpt", "gpt", "autoai", "edit", "recolor", "toanime", "ainsfw", "nsfwai", "aiimage18"]
     },
     media: {
         title: "Media & Search",
@@ -50,7 +50,7 @@ const menuData = {
     },
     canvas: {
         title: "Canvas & Image",
-        cmds: ["igstory", "iqcdark", "ttqc"]
+        cmds: ["igstory", "iqc", "iqcdark", "ttqc"]
     },
     tools: {
         title: "Tools Tambahan",
