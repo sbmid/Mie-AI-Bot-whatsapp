@@ -67,72 +67,80 @@ module.exports = {
 
             // Canvas sizes
             const canvasW = 800;
-            const padding = 50;
-            const textMaxWidth = canvasW - (padding * 2) - 120 - 20;
+            const padding = 30;
+            const avatarSize = 80;
+            const textStartX = padding + avatarSize + 20;
+            const textMaxWidth = canvasW - textStartX - 100; // Leave space for heart icon
 
             const tempCanvas = createCanvas(canvasW, 1000);
             const tCtx = tempCanvas.getContext('2d');
-            tCtx.font = '32px InterTT';
+            tCtx.font = '30px InterTT';
             const wrappedText = wrapText(tCtx, text, textMaxWidth);
             
-            const lineHeight = 40;
+            const lineHeight = 38;
             const textHeight = wrappedText.length * lineHeight;
             
-            const minHeight = 220;
-            const canvasH = Math.max(minHeight, textHeight + padding * 2 + 80);
+            const canvasH = padding * 2 + 60 + textHeight + 40; // 60 for name, 40 for footer
 
             const canvas = createCanvas(canvasW, canvasH);
             const ctx = canvas.getContext('2d');
 
-            // Draw Background (TikTok Dark/Transparent style)
-            ctx.fillStyle = '#000000'; // Pure black bg
+            // Draw Background (TikTok Dark Modal)
+            ctx.fillStyle = '#111111';
             ctx.fillRect(0, 0, canvasW, canvasH);
-            
-            // Draw Comment Bubble Area
-            ctx.fillStyle = '#242424';
-            ctx.beginPath();
-            ctx.roundRect(padding, padding, canvasW - (padding*2), canvasH - (padding*2), 24);
-            ctx.fill();
 
             // Draw Avatar
             ctx.save();
             ctx.beginPath();
-            ctx.arc(padding + 60, padding + 60, 40, 0, Math.PI * 2);
+            ctx.arc(padding + (avatarSize/2), padding + (avatarSize/2), avatarSize/2, 0, Math.PI * 2);
             ctx.closePath();
             ctx.clip();
-            ctx.drawImage(avatarImg, padding + 20, padding + 20, 80, 80);
+            ctx.drawImage(avatarImg, padding, padding, avatarSize, avatarSize);
             ctx.restore();
 
-            // Draw Username (TikTok style: grey, bold)
+            // Draw Username
             ctx.font = 'bold 24px InterTT';
-            ctx.fillStyle = '#b3b3b3'; // Tiktok grey
-            ctx.fillText(username, padding + 120, padding + 45);
+            ctx.fillStyle = '#8A8B91';
+            ctx.fillText(username, textStartX, padding + 25);
+
+            let currentX = textStartX + ctx.measureText(username).width + 10;
 
             // Draw "Creator" Badge if user is owner
             if (global.ownerNumber && global.ownerNumber.includes(sender)) {
-                ctx.fillStyle = '#ea4359'; // Tiktok Red
+                ctx.fillStyle = '#FE2C55'; // Tiktok Red
                 ctx.beginPath();
-                ctx.roundRect(padding + 120 + ctx.measureText(username).width + 10, padding + 25, 70, 24, 4);
+                ctx.roundRect(currentX, padding + 5, 75, 26, 4);
                 ctx.fill();
-                ctx.font = '14px InterTT';
+                ctx.font = 'bold 14px InterTT';
                 ctx.fillStyle = '#ffffff';
-                ctx.fillText("Creator", padding + 120 + ctx.measureText(username).width + 19, padding + 42);
+                ctx.fillText("Creator", currentX + 12, padding + 23);
+                currentX += 85;
             }
 
             // Draw Text
-            ctx.font = '32px InterTT';
-            ctx.fillStyle = '#ffffff';
-            let startY = padding + 90;
+            ctx.font = '30px InterTT';
+            ctx.fillStyle = '#FFFFFF';
+            let startY = padding + 65;
             for (let line of wrappedText) {
-                ctx.fillText(line, padding + 120, startY);
+                ctx.fillText(line, textStartX, startY);
                 startY += lineHeight;
             }
 
-            // Reply text fake
+            // Footer (Time & Reply)
             ctx.font = '20px InterTT';
-            ctx.fillStyle = '#b3b3b3';
-            ctx.fillText("Balas", padding + 120, startY + 10);
-            ctx.fillText("Bagikan", padding + 200, startY + 10);
+            ctx.fillStyle = '#8A8B91';
+            ctx.fillText("1h ago", textStartX, startY + 15);
+            ctx.font = 'bold 20px InterTT';
+            ctx.fillText("Reply", textStartX + 80, startY + 15);
+
+            // Draw Heart Icon (Right side)
+            ctx.font = '30px InterTT';
+            ctx.fillStyle = '#8A8B91';
+            const heartX = canvasW - 70;
+            ctx.fillText("♡", heartX, padding + 40);
+            ctx.font = '18px InterTT';
+            ctx.textAlign = 'center';
+            ctx.fillText(Math.floor(Math.random() * 500) + 10, heartX + 15, padding + 70);
 
             const outPath = path.join(OUT_DIR, `ttqc-${Date.now()}.png`);
             await writeFile(outPath, await canvas.encode('png'));
