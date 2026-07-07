@@ -14,6 +14,7 @@ const menuData = {
             { name: "Group Manager", cmds: ["acc", "add", "afk", "antilinkall", "ceksewa", "sewacek", "close", "delres", "demote", "gcoff", "gcmute", "gcon", "group", "gstatus", "gs", "groupstatus", "hidetag", "kick", "leave", "linkgc", "listres", "open", "promote", "revoke", "addres", "setres", "setdesk", "setnamegc", "timergc", "totag", "welcome"] },
             { name: "Info & Islami", cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news"] },
             { name: "Maker & Sticker", cmds: ["attp", "brat", "sbrat", "bratvid", "bratgif", "smeme", "s", "stiker", "sticker", "wm", "watermark", "colong", "ephoto360", "photooxy", "textpro"] },
+            { name: "Canvas & Image", cmds: ["igstory", "iqcdark", "ttqc"] },
             { name: "Tools Tambahan", cmds: ["cekidgc", "cekspek", "cekmeta", "mediainfo", "spek", "getidch", "hd", "delhd", "remini", "upscale", "noiseremover", "clearaudio", "purestatus", "puresw", "pureimg", "purevid", "hapus", "delete", "delpure", "hapuspure", "removebg", "removbg", "rbg", "nobg", "resend", "kirimulang", "teruskan", "rvo", "readviewonce", "toaudio", "tomp3", "toimage", "toimg", "tourl", "up", "upch", "postch", "tovn", "vn", "call", "endcall", "leaderboard", "lb", "top", "topglobal", "me", "profile", "profil", "rank", "level", "lapor", "request", "cekfeedback", "donelapor", "donerequest", "volume", "volvideo", "volumevideo"] },
             { name: "Khusus Owner", cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall"] },
             { name: "Main Menu", cmds: ["aku", "menu", "help", "p", "list", "owner", "ping", "runtime", "sewa"] }
@@ -46,6 +47,10 @@ const menuData = {
     maker: {
         title: "Maker & Sticker",
         cmds: ["attp", "brat", "sbrat", "bratvid", "bratgif", "smeme", "s", "stiker", "sticker", "wm", "watermark", "colong", "ephoto360", "photooxy", "textpro"]
+    },
+    canvas: {
+        title: "Canvas & Image",
+        cmds: ["igstory", "iqcdark", "ttqc"]
     },
     tools: {
         title: "Tools Tambahan",
@@ -82,7 +87,7 @@ const getMidnightTimestamp = () => {
 };
 
 module.exports = {
-    command: ['menu', 'help', 'p', 'list', 'allmenu', 'menu_ai', 'menu_media', 'menu_game', 'menu_rpg', 'menu_group', 'menu_info', 'menu_maker', 'menu_tools', 'menu_owner', 'menu_main'],
+    command: ['menu', 'help', 'p', 'list', 'allmenu', 'menu_ai', 'menu_media', 'menu_game', 'menu_rpg', 'menu_group', 'menu_info', 'menu_maker', 'menu_canvas', 'menu_tools', 'menu_owner', 'menu_main'],
     handler: async (sock, m, { prefix, command }) => {
         const from = m.chat;
 
@@ -181,6 +186,7 @@ module.exports = {
                         { title: "Group Manager", description: "Fitur pengelolaan grup", id: `${prefix}menu_group` },
                         { title: "Info & Islami", description: "Informasi, cuaca, & agama", id: `${prefix}menu_info` },
                         { title: "Maker & Sticker", description: "Buat stiker & teks efek", id: `${prefix}menu_maker` },
+                        { title: "Canvas & Image", description: "Generator gambar otomatis", id: `${prefix}menu_canvas` },
                         { title: "Tools Tambahan", description: "Berbagai alat fungsional", id: `${prefix}menu_tools` },
                         { title: "Main Menu", description: "Menu dasar & status bot", id: `${prefix}menu_main` }
                     ]
