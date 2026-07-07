@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { sendMediaSafe } = require('../../lib/helper');
+const { sendMediaSafe, fetchBuffer } = require('../../lib/helper');
 
 async function scrapeSiputZx(url) {
     let result = null;
@@ -102,11 +102,13 @@ module.exports = {
                     await new Promise(r => setTimeout(r, 1500));
                 }
             } else if (data.videos && data.videos.length > 0) {
-                await sendMediaSafe(sock, from, null, data.videos[0], 'video', caption, m);
+                let vBuffer = await fetchBuffer(data.videos[0]).catch(() => null);
+                await sendMediaSafe(sock, from, vBuffer, data.videos[0], 'video', caption, m);
             }
 
             if (data.audio) {
-                await sendMediaSafe(sock, from, null, data.audio, 'audio', '', m);
+                let aBuffer = await fetchBuffer(data.audio).catch(() => null);
+                await sendMediaSafe(sock, from, aBuffer, data.audio, 'audio', '', m);
             }
 
             if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '✅', key: m.key } });
