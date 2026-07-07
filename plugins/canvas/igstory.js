@@ -282,7 +282,12 @@ module.exports = {
             return sock.sendMessage(from, { text: `[!] Kirim/balas foto dengan caption *${prefix}${command}* <username>` }, { quoted: m });
         }
 
-        const username = text || m.pushName || "Anonymous";
+        // Format: .igstory username|like|comment|repost
+        const args = text ? text.split('|').map(s => s.trim()) : [];
+        const username = args[0] || m.pushName || "Anonymous";
+        const customLike = args[1] ? parseInt(args[1]) : Math.floor(Math.random() * 900) + 100;
+        const customComment = args[2] ? parseInt(args[2]) : Math.floor(Math.random() * 100) + 10;
+        const customRepost = args[3] ? parseInt(args[3]) : Math.floor(Math.random() * 50) + 1;
 
         if (global.waitMode === "react") await sock.sendMessage(from, { react: { text: '⏳', key: m.key } });
 
@@ -291,8 +296,8 @@ module.exports = {
             let buffer = Buffer.from([]);
             for await (const chunk of stream) buffer = Buffer.concat([buffer, chunk]);
 
-            // Dapatkan PP User
-            const targetJid = m.message?.extendedTextMessage?.contextInfo?.participant || m.sender;
+            // Dapatkan PP User yang nge-chat
+            const targetJid = m.sender;
             let profileUrl = 'https://raw.githubusercontent.com/Ditzzx-vibecoder/Assets/main/Image/artworks-gWLRE6HyPH3DgVMG-ZFFxtg-t500x500.jpg';
             try {
                 profileUrl = await sock.profilePictureUrl(targetJid, 'image');
@@ -300,9 +305,9 @@ module.exports = {
 
             const outPath = await generateIgStory({
                 username: username,
-                like: Math.floor(Math.random() * 900) + 100,
-                comment: Math.floor(Math.random() * 100) + 10,
-                repost: Math.floor(Math.random() * 50) + 1,
+                like: customLike,
+                comment: customComment,
+                repost: customRepost,
                 profilePhoto: profileUrl,
                 mainPhoto: buffer
             });
