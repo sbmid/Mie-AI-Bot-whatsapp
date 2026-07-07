@@ -8,5 +8,6 @@
   "ext": "js,mjs",
   "execMap": {
     "js": "node"
-  }
+  },
+  "delay": "3000"
 }
