@@ -12,11 +12,11 @@ const menuData = {
             { name: "Hiburan & Game", cmds: ["asahotak", "caklontong", "cerdascermat", "family100", "lengkapikalimat", "maths", "siapakahaku", "slot", "judi", "tebakff", "tebakgambar", "tebakgame", "tebakkartun", "tebakkata", "tebaklagu", "tebaklirik", "tebakwarna"] },
             { name: "RPG & Spaceman", cmds: ["rpgstart", "rpgstats", "rpgexplore", "rpginv", "rpgshop", "rpghelp", "attack", "skill", "ulti", "flee", "buy", "sell", "use", "equip", "unequip", "craft", "quest", "daily", "pvp", "dungeon", "spaceman", "changeclass", "upgrade", "leaderboardrpg", "adopsipet", "dungeon", "bank", "setor", "tarik", "topbank", "topkaya", "market", "ceksaham", "portofolio", "crypto"] },
             { name: "Group Manager", cmds: ["acc", "add", "afk", "antilinkall", "ceksewa", "sewacek", "close", "delres", "demote", "gcoff", "gcmute", "gcon", "group", "gstatus", "gs", "groupstatus", "hidetag", "kick", "leave", "linkgc", "listres", "open", "promote", "revoke", "addres", "setres", "setdesk", "setnamegc", "timergc", "totag", "welcome"] },
-            { name: "Info & Islami", cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news"] },
+            { name: "Info & Islami", cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news", "livescore", "bola", "scorebola"] },
             { name: "Maker & Sticker", cmds: ["attp", "brat", "sbrat", "bratvid", "bratgif", "smeme", "s", "stiker", "sticker", "wm", "watermark", "colong", "ephoto360", "photooxy", "textpro"] },
-            { name: "Canvas & Image", cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen"] },
+            { name: "Canvas & Image", cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen", "bratvermeil", "bratvidvermeil", "bratgojo", "bratvidgojo"] },
             { name: "Tools Tambahan", cmds: ["cekidgc", "cekspek", "cekmeta", "mediainfo", "spek", "getidch", "hd", "delhd", "remini", "upscale", "noiseremover", "clearaudio", "purestatus", "puresw", "pureimg", "purevid", "hapus", "delete", "delpure", "hapuspure", "removebg", "removbg", "rbg", "nobg", "resend", "kirimulang", "teruskan", "rvo", "readviewonce", "toaudio", "tomp3", "toimage", "toimg", "tourl", "up", "upch", "postch", "tovn", "vn", "call", "endcall", "leaderboard", "lb", "top", "topglobal", "me", "profile", "profil", "rank", "level", "lapor", "request", "cekfeedback", "donelapor", "donerequest", "volume", "volvideo", "volumevideo"] },
-            { name: "Khusus Owner", cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall"] },
+            { name: "Khusus Owner", cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall", "install", "npminstall", "call", "rtc"] },
             { name: "Main Menu", cmds: ["aku", "menu", "help", "p", "list", "owner", "ping", "runtime", "sewa"] }
         ]
     },
@@ -42,7 +42,7 @@ const menuData = {
     },
     info: {
         title: "Info & Islami",
-        cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news"]
+        cmds: ["bmkg", "cuaca", "jadwaltv", "doaharian", "kisahnabi", "listsurah", "quranaudio", "artinama", "arti", "kecocokannama", "cocoknama", "nomorhoki", "potensipenyakit", "penyakit", "ramalanjodoh", "jodoh", "ramalanjodohbali", "jodohbali", "rejekiweton", "weton", "sifatusaha", "usahabisnis", "tafsirmimpi", "mimpi", "zodiak", "confess", "menfess", "chnews", "news", "livescore", "bola", "scorebola"]
     },
     maker: {
         title: "Maker & Sticker",
@@ -50,7 +50,7 @@ const menuData = {
     },
     canvas: {
         title: "Canvas & Image",
-        cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen"]
+        cmds: ["brat", "bratvid", "brat2", "bratvid2", "bratgif2", "smeme", "qc", "qc2", "ttqc", "iqc", "iqcdark", "igstory", "memegen", "bratvermeil", "bratvidvermeil", "bratgojo", "bratvidgojo"]
     },
     tools: {
         title: "Tools Tambahan",
@@ -58,7 +58,7 @@ const menuData = {
     },
     owner: {
         title: "Khusus Owner",
-        cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall"]
+        cmds: ["addowner", "delowner", "addsewa", "listsewa", "delsewa", "botstatus", "copypanel", "addpanel", "clonemenu", "clonepanel", "crm", "setcrm", "delcrm", "listcrm", "runcrm", "stopcrm", "statuscrm", "dumpmsg", "dumpwaf", "eval", "fakeai", "editfakeai", "panel", "sendpanel", "createpanel", "getdb", "getplugin", "join", "out", "pc", "setbot", "setsewa", "spy", "spylist", "spyget", "spylog", "spynumber", "spytype", "spyrare", "spyclear", "spyexport", "spysearch", "testbtn", "testbtn2", "tb2", "testmsg", "testwaf", "upsw", "upstatus", "upstory", "richtest", "rt", "carouseltest", "ct", "addakses", "deleteakses", "addnsfw", "delnsfw", "editgold", "editrpg", "resetgoldall", "resetgolduser", "resetbankall", "resetkeluargaall", "install", "npminstall", "call", "rtc"]
     },
     main: {
         title: "Main Menu",
