@@ -334,21 +334,15 @@ module.exports = {
             await sock.sendMessage(m.chat, { video: { url: resultPath }, caption: "Done!" }, { quoted: m });
             unlinkSync(resultPath);
         } else {
-            // Convert to webp animated
-            const webpPath = resultPath.replace('.mp4', '.webp');
-            await execFileAsync('ffmpeg', [
-                '-i', resultPath,
-                '-vcodec', 'libwebp',
-                '-vf', 'scale=512:512:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=#00000000',
-                '-loop', '0',
-                '-preset', 'default',
-                '-an',
-                '-vsync', '0',
-                webpPath
-            ]);
-            await sock.sendMessage(m.chat, { sticker: { url: webpPath } }, { quoted: m });
+            // Gunakan wa-sticker-formatter agar ada EXIF metadata (gak jadi video/dokumen)
+            const { Sticker } = require('wa-sticker-formatter');
+            let sticker = new Sticker(resultPath, {
+                pack: 'Brat',
+                author: 'Bot Mie AI',
+                type: 'full',
+            });
+            await sock.sendMessage(m.chat, await sticker.toMessage(), { quoted: m });
             unlinkSync(resultPath);
-            if(existsSync(webpPath)) unlinkSync(webpPath);
         }
 
         if (global.waitMode === "react") await sock.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
