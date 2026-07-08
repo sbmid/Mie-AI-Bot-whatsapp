@@ -11,7 +11,7 @@ module.exports = {
         
         let startMsg = `╭───  「 *AFK MODE ON* 」  ───╮\n│\n`;
         startMsg += `│ [!] *User:* @${m.sender.split('@')[0]}\n`;
-        startMsg += `│ [!] *Mulai:* ${new Date().toLocaleTimeString('id-ID')}\n`;
+        startMsg += `│ [!] *Mulai:* ${new Date().toLocaleTimeString('id-ID', { timeZone: 'Asia/Jakarta' })} WIB\n`;
         startMsg += `│ [!] *Alasan:* ${user.afkReason}\n`;
         startMsg += `│\n`;
         startMsg += `╰──────────────────╯\n`;
