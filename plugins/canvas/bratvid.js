@@ -301,7 +301,7 @@ module.exports = {
 
     let theme = 'white';
     let blur = 0;
-    let format = command === 'bratgif2' ? 'gif' : 'mp4';
+    let format = 'webp';
     let actualText = text;
 
     if (text.includes('|')) {
@@ -313,6 +313,8 @@ module.exports = {
         if (args.includes('blur:1')) blur = 1;
         if (args.includes('blur:2')) blur = 2;
         if (args.includes('blur:3')) blur = 3;
+        // Allow explicit mp4 output just in case they really want video
+        if (args.includes('video')) format = 'mp4';
     }
 
     try {
@@ -320,7 +322,7 @@ module.exports = {
             text: actualText,
             theme,
             blur,
-            format,
+            format: 'mp4', // we always generate mp4 first because it's faster
             frameDuration: 0.35,
             holdDuration: 1.2,
             maxWordPerLayer: 1,
@@ -332,8 +334,8 @@ module.exports = {
             await sock.sendMessage(m.chat, { video: { url: resultPath }, caption: "Done!" }, { quoted: m });
             unlinkSync(resultPath);
         } else {
-            // For bratgif2 (animated sticker) we need to convert to webp animated
-            const webpPath = resultPath.replace('.gif', '.webp');
+            // Convert to webp animated
+            const webpPath = resultPath.replace('.mp4', '.webp');
             await execFileAsync('ffmpeg', [
                 '-i', resultPath,
                 '-vcodec', 'libwebp',
@@ -346,9 +348,9 @@ module.exports = {
             ]);
             await sock.sendMessage(m.chat, { sticker: { url: webpPath } }, { quoted: m });
             unlinkSync(resultPath);
-            unlinkSync(webpPath);
+            if(existsSync(webpPath)) unlinkSync(webpPath);
         }
-        
+
         if (global.waitMode === "react") await sock.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
     } catch (e) {
         console.error(e);
