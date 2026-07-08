@@ -9,8 +9,6 @@ module.exports = {
         user.afkTime = +new Date();
         user.afkReason = text || 'Tanpa Alasan';
         
-        if(global.db && global.db.saveAll) global.db.saveAll();
-
         let startMsg = `╭───  「 *AFK MODE ON* 」  ───╮\n│\n`;
         startMsg += `│ [!] *User:* @${m.sender.split('@')[0]}\n`;
         startMsg += `│ [!] *Mulai:* ${new Date().toLocaleTimeString('id-ID')}\n`;
